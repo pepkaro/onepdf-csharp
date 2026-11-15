@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "dpi": 72,
+  "background": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "fixtures": [
+    {
+      "id": "stream-parent",
+      "file": "pdf/stream-parent.pdf",
+      "sha256": "1e9b9c231771994e9a6f22ec0b73fd0e0589a41ee30918250db6bd99e41523e6",
+      "mediaBox": [
+        0,
+        0,
+        320,
+        160
+      ],
+      "cropBox": [
+        0,
+        0,
+        320,
+        160
+      ],
+      "rotation": 0,
+      "renderWidth": 320,
+      "renderHeight": 160
+    },
+    {
+      "id": "flattened-control",
+      "file": "pdf/flattened-control.pdf",
+      "sha256": "eed61c3be4c11d556ac6e8f575625e7e23c87bd856a30562dbab5064105f779c",
+      "mediaBox": [
+        0,
+        0,
+        320,
+        160
+      ],
+      "cropBox": [
+        0,
+        0,
+        320,
+        160
+      ],
+      "rotation": 0,
+      "renderWidth": 320,
+      "renderHeight": 160
+    }
+  ]
+}

@@ -273,6 +273,49 @@ internal static class FontSupport
         };
     }
 
+    /// <summary>Loads an embedded CMap and its dictionary parents (ISO 32000-1, Table 120).</summary>
+    /// <remarks>The stream chain shares the existing CMap byte bound and lookup depth bound. A rejected
+    /// parent leaves the child's mappings intact. Named parents remain limited to the predefined set.</remarks>
+    internal static CMap? LoadCMap(FontContext ctx, PdfStream stream, string what)
+    {
+        var seen = new HashSet<PdfStream>(ReferenceEqualityComparer.Instance);
+        int remaining = MaxCMapBytes;
+        return Load(stream, 0);
+
+        CMap? Load(PdfStream current, int depth)
+        {
+            if (depth >= CMap.MaxParentDepth || !seen.Add(current))
+            {
+                ctx.Warn($"The {what} has a cyclic or excessively deep UseCMap chain; parent ignored.");
+                return null;
+            }
+
+            byte[]? bytes = ReadStream(ctx, current, remaining, what);
+            if (bytes is null)
+            {
+                return null;
+            }
+
+            remaining -= bytes.Length;
+            CMap map = CMapParser.Parse(bytes);
+            // Keep the existing precedence of a resolved program-level usecmap.
+            if (map.UseCMap is null)
+            {
+                PdfObject? parent = current.Dictionary.Get("UseCMap");
+                if (parent is PdfStream parentStream)
+                {
+                    map.UseCMap = Load(parentStream, depth + 1);
+                }
+                else if (parent is PdfName parentName)
+                {
+                    map.UseCMap = PredefinedCMaps.TryGet(parentName.Value);
+                }
+            }
+
+            return map;
+        }
+    }
+
     /// <summary>Parses a <c>/ToUnicode</c> stream; null when absent or unusable.</summary>
     public static CMap? LoadToUnicode(FontContext ctx, PdfDictionary font)
     {
@@ -281,15 +324,9 @@ internal static class FontSupport
             return null;
         }
 
-        byte[]? bytes = ReadStream(ctx, s, MaxCMapBytes, "ToUnicode CMap");
-        if (bytes is null)
-        {
-            return null;
-        }
-
         try
         {
-            return CMapParser.Parse(bytes);
+            return LoadCMap(ctx, s, "ToUnicode CMap");
         }
         catch (FontProgramException ex)
         {
