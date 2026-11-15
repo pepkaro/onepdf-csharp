@@ -1,0 +1,87 @@
+{
+  "onepdf_base": "d813ec6ba9dd138f7d2a6f3b8f5a51dc9c5f4bc8",
+  "source_files": {
+    "src/OnePdf/ColorSpaces/ColorSpaceCache.cs": "b34811804c2efbea8e44960999d01a49afde3065f718df641e870dd353112092",
+    "src/OnePdf/ColorSpaces/ColorSpaceResolver.cs": "4bedbb67e81211ca80851d4649f46253472d63f65301f59edf6cf8e3e9398d03",
+    "src/OnePdf/ColorSpaces/PdfColorSpace.cs": "49b7c847d46fa340564ed295d1d98854124d60bdcf2650977e649a4fa76934a2",
+    "src/OnePdf/Content/ContentInterpreter.Patterns.cs": "77dc6732a2d5a74eae88b892314c4548714c72da1de899593e2e55b19d13ecb7",
+    "src/OnePdf/Content/ContentInterpreter.cs": "e1ba8f755c0503f112435cfbe86c02a706157841c93e89836a1313f9d72af2b5",
+    "src/OnePdf/Content/GState.cs": "25d07df70d2c378bca81e8eaae863b3fc4046845f04ddcb12387c88a11d928eb",
+    "tests/OnePdf.Tests/Content/DefaultColorSpaceTests.cs": "83ad452be8ae42332c04a00b9450fa137d62cc4c05cdd4d5dea1959cff573756"
+  },
+  "onepdf_dll_sha256": "460a59fe077fee5b5e6ba8627454604d5c63fe5b6f614ee421bcc52a175c976c",
+  "oneimage_integration_source": "e43ee264954a177ff01a16584625a3dea79244fa",
+  "oneimage_normal_onepdf_pin": "1.18.0",
+  "integration_onepdf_version": "1.22.0",
+  "sdk": "10.0.404",
+  "runtime": "10.0.15",
+  "builds": {
+    "solution": {
+      "warnings": 0,
+      "errors": 0,
+      "log_sha256": "e6eebce661b8dfcff0a0981562cfaadbecc0cd3e8991478ae816eb89038a3a67"
+    },
+    "integration": {
+      "warnings": 0,
+      "errors": 0,
+      "log_sha256": "a234097f8be5b783274f16756d56270df73de1e4c549c3d51bacec8fad169c64"
+    },
+    "harness": {
+      "warnings": 0,
+      "errors": 0,
+      "log_sha256": "d31445d4a56e285dedb5a82fb41ddd57dfa6ee8643d13d82053b7f8f01558399"
+    },
+    "performance": {
+      "warnings": 0,
+      "errors": 0,
+      "log_sha256": "aa33163f2dcbf2c19c058cfee46c576427abd6a7b306bd5fed5f222a2e9bd39b"
+    }
+  },
+  "tests": {
+    "onepdf": {
+      "total": 3919,
+      "passed": 3638,
+      "failed": 0,
+      "skipped": 281,
+      "seconds": 130.164,
+      "xml_sha256": "fbddac9e57eeb82a59a5cc4046bca756934d730e3c44827dd60b31a5375169a2",
+      "log_sha256": "61851653680310316deea99d00ea7b2e53af240def94523908f12709ae366b82"
+    },
+    "layout": {
+      "total": 465,
+      "passed": 428,
+      "failed": 0,
+      "skipped": 37,
+      "seconds": 39.337,
+      "xml_sha256": "938af3e6eaff302b9e725f92d28226dc9a09c5b2e833fa6685354954aaf90b12",
+      "log_sha256": "312c5898c9911415aa8668d8042aac2fc44777764773083bfdd060380ebd391e"
+    },
+    "integration": {
+      "total": 635,
+      "passed": 635,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 5.457,
+      "xml_sha256": "5da8782e5e066dbab18343ed24ffa72a1b6985bfb7ca855452e6ac7ec1b60e03",
+      "log_sha256": "ef17d80e6ad3c0b04fdaef706b992e373f7df7843de71170bae2a84a1ed041a5"
+    }
+  },
+  "jit": {
+    "prototype_onepdf_sha256": "460a59fe077fee5b5e6ba8627454604d5c63fe5b6f614ee421bcc52a175c976c",
+    "prototype_source_sha256": "e1ba8f755c0503f112435cfbe86c02a706157841c93e89836a1313f9d72af2b5",
+    "jit_sha256": "a0e5c173da848478d7f8939e42074be96f450d4d4124e8c4d550b6454c0b8867",
+    "stack_frame_bytes": 448,
+    "generated_code_bytes": 532,
+    "output_matches_frozen_no_default": true
+  },
+  "source_change_after_held_fastpath": [
+    "src/OnePdf/Content/ContentInterpreter.cs"
+  ],
+  "source_patch_sha256": "4def99e9d68119d6ed5589a6a818b167e2c323c245454a8c4757fe0e69dade70",
+  "timing": "not run yet; no clearance or publication",
+  "limits": [
+    "Existing 281 OnePDF and 37 layout skips retained",
+    "No AOT/Windows/WebView2/package-release claim",
+    "Same warmed Image.ToArray timing phase does not explicitly call ReleaseDecodedPixels; not proven uncached rerasterization"
+  ]
+}

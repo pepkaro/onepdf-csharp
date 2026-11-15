@@ -1,0 +1,350 @@
+{
+  "baseline": [
+    {
+      "left": "implicit-sc",
+      "right": "explicit-g",
+      "different_pixels": 0,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 0,
+      "left_rgb": [
+        64,
+        64,
+        64
+      ],
+      "right_rgb": [
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "left": "implicit-scn",
+      "right": "explicit-g",
+      "different_pixels": 0,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 0,
+      "left_rgb": [
+        64,
+        64,
+        64
+      ],
+      "right_rgb": [
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "left": "implicit-SC",
+      "right": "explicit-G",
+      "different_pixels": 0,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 0,
+      "left_rgb": [
+        64,
+        64,
+        64
+      ],
+      "right_rgb": [
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "left": "form-implicit-sc",
+      "right": "form-explicit-g",
+      "different_pixels": 0,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 0,
+      "left_rgb": [
+        64,
+        64,
+        64
+      ],
+      "right_rgb": [
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "left": "initial-device-cmyk",
+      "right": "explicit-black-cmyk",
+      "different_pixels": 0,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 0,
+      "left_rgb": [
+        30,
+        30,
+        29
+      ],
+      "right_rgb": [
+        30,
+        30,
+        29
+      ]
+    }
+  ],
+  "prereview": [
+    {
+      "left": "implicit-sc",
+      "right": "explicit-g",
+      "different_pixels": 1024,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 73,
+      "left_rgb": [
+        64,
+        64,
+        64
+      ],
+      "right_rgb": [
+        137,
+        137,
+        137
+      ]
+    },
+    {
+      "left": "implicit-scn",
+      "right": "explicit-g",
+      "different_pixels": 1024,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 73,
+      "left_rgb": [
+        64,
+        64,
+        64
+      ],
+      "right_rgb": [
+        137,
+        137,
+        137
+      ]
+    },
+    {
+      "left": "implicit-SC",
+      "right": "explicit-G",
+      "different_pixels": 1024,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 73,
+      "left_rgb": [
+        64,
+        64,
+        64
+      ],
+      "right_rgb": [
+        137,
+        137,
+        137
+      ]
+    },
+    {
+      "left": "form-implicit-sc",
+      "right": "form-explicit-g",
+      "different_pixels": 1024,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 73,
+      "left_rgb": [
+        64,
+        64,
+        64
+      ],
+      "right_rgb": [
+        137,
+        137,
+        137
+      ]
+    },
+    {
+      "left": "initial-device-cmyk",
+      "right": "explicit-black-cmyk",
+      "different_pixels": 1024,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 255,
+      "left_rgb": [
+        255,
+        255,
+        255
+      ],
+      "right_rgb": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "fixed": [
+    {
+      "left": "implicit-sc",
+      "right": "explicit-g",
+      "different_pixels": 0,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 0,
+      "left_rgb": [
+        137,
+        137,
+        137
+      ],
+      "right_rgb": [
+        137,
+        137,
+        137
+      ]
+    },
+    {
+      "left": "implicit-scn",
+      "right": "explicit-g",
+      "different_pixels": 0,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 0,
+      "left_rgb": [
+        137,
+        137,
+        137
+      ],
+      "right_rgb": [
+        137,
+        137,
+        137
+      ]
+    },
+    {
+      "left": "implicit-SC",
+      "right": "explicit-G",
+      "different_pixels": 0,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 0,
+      "left_rgb": [
+        137,
+        137,
+        137
+      ],
+      "right_rgb": [
+        137,
+        137,
+        137
+      ]
+    },
+    {
+      "left": "form-implicit-sc",
+      "right": "form-explicit-g",
+      "different_pixels": 0,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 0,
+      "left_rgb": [
+        137,
+        137,
+        137
+      ],
+      "right_rgb": [
+        137,
+        137,
+        137
+      ]
+    },
+    {
+      "left": "initial-device-cmyk",
+      "right": "explicit-black-cmyk",
+      "different_pixels": 0,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 0,
+      "left_rgb": [
+        0,
+        0,
+        0
+      ],
+      "right_rgb": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "mupdf": [
+    {
+      "left": "implicit-sc",
+      "right": "explicit-g",
+      "different_pixels": 0,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 0,
+      "left_rgb": [
+        136,
+        136,
+        136
+      ],
+      "right_rgb": [
+        136,
+        136,
+        136
+      ]
+    },
+    {
+      "left": "implicit-scn",
+      "right": "explicit-g",
+      "different_pixels": 0,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 0,
+      "left_rgb": [
+        136,
+        136,
+        136
+      ],
+      "right_rgb": [
+        136,
+        136,
+        136
+      ]
+    },
+    {
+      "left": "implicit-SC",
+      "right": "explicit-G",
+      "different_pixels": 0,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 0,
+      "left_rgb": [
+        136,
+        136,
+        136
+      ],
+      "right_rgb": [
+        136,
+        136,
+        136
+      ]
+    },
+    {
+      "left": "form-implicit-sc",
+      "right": "form-explicit-g",
+      "different_pixels": 0,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 0,
+      "left_rgb": [
+        136,
+        136,
+        136
+      ],
+      "right_rgb": [
+        136,
+        136,
+        136
+      ]
+    },
+    {
+      "left": "initial-device-cmyk",
+      "right": "explicit-black-cmyk",
+      "different_pixels": 0,
+      "total_pixels": 1024,
+      "maximum_channel_difference": 0,
+      "left_rgb": [
+        0,
+        0,
+        0
+      ],
+      "right_rgb": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

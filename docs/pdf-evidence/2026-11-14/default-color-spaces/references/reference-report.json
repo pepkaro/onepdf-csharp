@@ -1,0 +1,652 @@
+{
+  "pdfium": {
+    "binding": "5.13.0",
+    "engine": "153.0.7999.0",
+    "dpi": 72,
+    "draw_annots": true,
+    "xfa_disabled": true,
+    "files": [
+      {
+        "name": "direct",
+        "width": 256,
+        "height": 128,
+        "sha256": "5840c7d0c0f9e41626d42411cc8edac41eb3c46db4ce03cd392841d1ef4939c7"
+      },
+      {
+        "name": "default",
+        "width": 256,
+        "height": 128,
+        "sha256": "f59c4aa0751dbffdf518a8418606c411a2764a56e11b755ff93053601be6c941"
+      },
+      {
+        "name": "device",
+        "width": 256,
+        "height": 128,
+        "sha256": "8eb9f88eb63c75ef135bd7d7e77b076dde22ba6fd08658faa93029feb2c1056f"
+      },
+      {
+        "name": "comparison",
+        "width": 568,
+        "height": 200,
+        "sha256": "482fadbc1687a06d446bea389b04e76621fc8751ba38c88761e10796991cc6b6"
+      },
+      {
+        "name": "explicit-G",
+        "width": 32,
+        "height": 32,
+        "sha256": "21c00981086d23c28008d9b13897a670c3492d6f387cc219e285536081e26afd"
+      },
+      {
+        "name": "explicit-black-cmyk",
+        "width": 32,
+        "height": 32,
+        "sha256": "b5d3add64bd14ab257b99078e065b938f6f7d76ce09bfcfc467b84d07f939a4d"
+      },
+      {
+        "name": "explicit-device",
+        "width": 32,
+        "height": 32,
+        "sha256": "e5158b09b2478a7d33e86397479124095cbcd2b6676b77f63bac5b8f97e57400"
+      },
+      {
+        "name": "explicit-g",
+        "width": 32,
+        "height": 32,
+        "sha256": "21c00981086d23c28008d9b13897a670c3492d6f387cc219e285536081e26afd"
+      },
+      {
+        "name": "explicit-icc",
+        "width": 32,
+        "height": 32,
+        "sha256": "e5158b09b2478a7d33e86397479124095cbcd2b6676b77f63bac5b8f97e57400"
+      },
+      {
+        "name": "form-explicit-g",
+        "width": 32,
+        "height": 32,
+        "sha256": "21c00981086d23c28008d9b13897a670c3492d6f387cc219e285536081e26afd"
+      },
+      {
+        "name": "form-implicit-sc",
+        "width": 32,
+        "height": 32,
+        "sha256": "21c00981086d23c28008d9b13897a670c3492d6f387cc219e285536081e26afd"
+      },
+      {
+        "name": "implicit-SC",
+        "width": 32,
+        "height": 32,
+        "sha256": "21c00981086d23c28008d9b13897a670c3492d6f387cc219e285536081e26afd"
+      },
+      {
+        "name": "implicit-sc",
+        "width": 32,
+        "height": 32,
+        "sha256": "21c00981086d23c28008d9b13897a670c3492d6f387cc219e285536081e26afd"
+      },
+      {
+        "name": "implicit-scn",
+        "width": 32,
+        "height": 32,
+        "sha256": "21c00981086d23c28008d9b13897a670c3492d6f387cc219e285536081e26afd"
+      },
+      {
+        "name": "initial-comparison",
+        "width": 256,
+        "height": 192,
+        "sha256": "e5ecb9b00c54d20210cf6a236e44b114bbb59b4f699744efe9955fd062e60a34"
+      },
+      {
+        "name": "initial-device-cmyk",
+        "width": 32,
+        "height": 32,
+        "sha256": "cd863a704b4bc500785cdcfa1d7e4b3a1739ec50d3f13a2011e79a9bcd99a007"
+      }
+    ],
+    "pairs": [
+      {
+        "left": "direct",
+        "right": "default",
+        "different_pixels": 12544,
+        "total_pixels": 32768,
+        "maximum_channel_difference": 166,
+        "mean_absolute_channel_difference": 17.919270833333332
+      },
+      {
+        "left": "implicit-sc",
+        "right": "explicit-g",
+        "different_pixels": 0,
+        "total_pixels": 1024,
+        "maximum_channel_difference": 0,
+        "mean_absolute_channel_difference": 0.0
+      },
+      {
+        "left": "implicit-scn",
+        "right": "explicit-g",
+        "different_pixels": 0,
+        "total_pixels": 1024,
+        "maximum_channel_difference": 0,
+        "mean_absolute_channel_difference": 0.0
+      },
+      {
+        "left": "implicit-SC",
+        "right": "explicit-G",
+        "different_pixels": 0,
+        "total_pixels": 1024,
+        "maximum_channel_difference": 0,
+        "mean_absolute_channel_difference": 0.0
+      },
+      {
+        "left": "form-implicit-sc",
+        "right": "form-explicit-g",
+        "different_pixels": 0,
+        "total_pixels": 1024,
+        "maximum_channel_difference": 0,
+        "mean_absolute_channel_difference": 0.0
+      },
+      {
+        "left": "initial-device-cmyk",
+        "right": "explicit-black-cmyk",
+        "different_pixels": 1024,
+        "total_pixels": 1024,
+        "maximum_channel_difference": 35,
+        "mean_absolute_channel_difference": 32.666666666666664
+      }
+    ]
+  },
+  "pdfjs": {
+    "files": [
+      {
+        "name": "direct",
+        "pdfjs": "6.5.438",
+        "build": "0a4153349",
+        "backend": "@napi-rs/canvas (Node Canvas; NOT browser Canvas)",
+        "canvasVersion": "1.1.1",
+        "node": "v24.22.1",
+        "width": 256,
+        "height": 128,
+        "dpi": 72,
+        "annotations": "ENABLE static appearances",
+        "background": "rgb(255,255,255)",
+        "useSystemFonts": false,
+        "isEvalSupported": false,
+        "xfa": false,
+        "useWorkerFetch": true,
+        "useWasm": true,
+        "icc": "Requested via custom local read-only XMLHttpRequest host adapter; validate with transform control",
+        "runtimeReads": [
+          {
+            "file": "wasm/qcms_bg.wasm",
+            "bytes": 96589
+          }
+        ],
+        "deviceCmyk": "Polynomial fallback unless explicit ICCBased; no default CMYK ICC URL supplied",
+        "diagnostics": [],
+        "stderr": "",
+        "sha256": "e7f2996bb9af5e6504b701e0fa0e85796322e3b38636a942bcd512b308f07fdc"
+      },
+      {
+        "name": "default",
+        "pdfjs": "6.5.438",
+        "build": "0a4153349",
+        "backend": "@napi-rs/canvas (Node Canvas; NOT browser Canvas)",
+        "canvasVersion": "1.1.1",
+        "node": "v24.22.1",
+        "width": 256,
+        "height": 128,
+        "dpi": 72,
+        "annotations": "ENABLE static appearances",
+        "background": "rgb(255,255,255)",
+        "useSystemFonts": false,
+        "isEvalSupported": false,
+        "xfa": false,
+        "useWorkerFetch": true,
+        "useWasm": true,
+        "icc": "Requested via custom local read-only XMLHttpRequest host adapter; validate with transform control",
+        "runtimeReads": [
+          {
+            "file": "wasm/qcms_bg.wasm",
+            "bytes": 96589
+          }
+        ],
+        "deviceCmyk": "Polynomial fallback unless explicit ICCBased; no default CMYK ICC URL supplied",
+        "diagnostics": [
+          "Warning: No CMYK ICC profile support due to missing `iccUrl` API option"
+        ],
+        "stderr": "Warning: No CMYK ICC profile support due to missing `iccUrl` API option\n",
+        "sha256": "ede9089cdbe67dda22e4f376cb0bad951d2a622b525d6bfb1496eabcd74d36d1"
+      },
+      {
+        "name": "device",
+        "pdfjs": "6.5.438",
+        "build": "0a4153349",
+        "backend": "@napi-rs/canvas (Node Canvas; NOT browser Canvas)",
+        "canvasVersion": "1.1.1",
+        "node": "v24.22.1",
+        "width": 256,
+        "height": 128,
+        "dpi": 72,
+        "annotations": "ENABLE static appearances",
+        "background": "rgb(255,255,255)",
+        "useSystemFonts": false,
+        "isEvalSupported": false,
+        "xfa": false,
+        "useWorkerFetch": true,
+        "useWasm": true,
+        "icc": "Requested via custom local read-only XMLHttpRequest host adapter; validate with transform control",
+        "runtimeReads": [
+          {
+            "file": "wasm/qcms_bg.wasm",
+            "bytes": 96589
+          }
+        ],
+        "deviceCmyk": "Polynomial fallback unless explicit ICCBased; no default CMYK ICC URL supplied",
+        "diagnostics": [
+          "Warning: No CMYK ICC profile support due to missing `iccUrl` API option"
+        ],
+        "stderr": "Warning: No CMYK ICC profile support due to missing `iccUrl` API option\n",
+        "sha256": "ede9089cdbe67dda22e4f376cb0bad951d2a622b525d6bfb1496eabcd74d36d1"
+      },
+      {
+        "name": "comparison",
+        "pdfjs": "6.5.438",
+        "build": "0a4153349",
+        "backend": "@napi-rs/canvas (Node Canvas; NOT browser Canvas)",
+        "canvasVersion": "1.1.1",
+        "node": "v24.22.1",
+        "width": 568,
+        "height": 200,
+        "dpi": 72,
+        "annotations": "ENABLE static appearances",
+        "background": "rgb(255,255,255)",
+        "useSystemFonts": false,
+        "isEvalSupported": false,
+        "xfa": false,
+        "useWorkerFetch": true,
+        "useWasm": true,
+        "icc": "Requested via custom local read-only XMLHttpRequest host adapter; validate with transform control",
+        "runtimeReads": [
+          {
+            "file": "wasm/qcms_bg.wasm",
+            "bytes": 96589
+          }
+        ],
+        "deviceCmyk": "Polynomial fallback unless explicit ICCBased; no default CMYK ICC URL supplied",
+        "diagnostics": [
+          "Warning: No CMYK ICC profile support due to missing `iccUrl` API option"
+        ],
+        "stderr": "Warning: No CMYK ICC profile support due to missing `iccUrl` API option\n",
+        "sha256": "e4699b534bc4b868408c69e91f3c69afa21e2f7ab3121b64b61dabc84e391b5d"
+      },
+      {
+        "name": "explicit-G",
+        "pdfjs": "6.5.438",
+        "build": "0a4153349",
+        "backend": "@napi-rs/canvas (Node Canvas; NOT browser Canvas)",
+        "canvasVersion": "1.1.1",
+        "node": "v24.22.1",
+        "width": 32,
+        "height": 32,
+        "dpi": 72,
+        "annotations": "ENABLE static appearances",
+        "background": "rgb(255,255,255)",
+        "useSystemFonts": false,
+        "isEvalSupported": false,
+        "xfa": false,
+        "useWorkerFetch": true,
+        "useWasm": true,
+        "icc": "Requested via custom local read-only XMLHttpRequest host adapter; validate with transform control",
+        "runtimeReads": [],
+        "deviceCmyk": "Polynomial fallback unless explicit ICCBased; no default CMYK ICC URL supplied",
+        "diagnostics": [],
+        "stderr": "",
+        "sha256": "06bc3827820b33249beeb6f9052d5c2f1af586b998c4be625addbe8724661a63"
+      },
+      {
+        "name": "explicit-black-cmyk",
+        "pdfjs": "6.5.438",
+        "build": "0a4153349",
+        "backend": "@napi-rs/canvas (Node Canvas; NOT browser Canvas)",
+        "canvasVersion": "1.1.1",
+        "node": "v24.22.1",
+        "width": 32,
+        "height": 32,
+        "dpi": 72,
+        "annotations": "ENABLE static appearances",
+        "background": "rgb(255,255,255)",
+        "useSystemFonts": false,
+        "isEvalSupported": false,
+        "xfa": false,
+        "useWorkerFetch": true,
+        "useWasm": true,
+        "icc": "Requested via custom local read-only XMLHttpRequest host adapter; validate with transform control",
+        "runtimeReads": [
+          {
+            "file": "wasm/qcms_bg.wasm",
+            "bytes": 96589
+          }
+        ],
+        "deviceCmyk": "Polynomial fallback unless explicit ICCBased; no default CMYK ICC URL supplied",
+        "diagnostics": [
+          "Warning: No CMYK ICC profile support due to missing `iccUrl` API option"
+        ],
+        "stderr": "Warning: No CMYK ICC profile support due to missing `iccUrl` API option\n",
+        "sha256": "9087b7273142bf6c7a808982e5e21481bea019618713fea1c5069a0b51d5c23b"
+      },
+      {
+        "name": "explicit-device",
+        "pdfjs": "6.5.438",
+        "build": "0a4153349",
+        "backend": "@napi-rs/canvas (Node Canvas; NOT browser Canvas)",
+        "canvasVersion": "1.1.1",
+        "node": "v24.22.1",
+        "width": 32,
+        "height": 32,
+        "dpi": 72,
+        "annotations": "ENABLE static appearances",
+        "background": "rgb(255,255,255)",
+        "useSystemFonts": false,
+        "isEvalSupported": false,
+        "xfa": false,
+        "useWorkerFetch": true,
+        "useWasm": true,
+        "icc": "Requested via custom local read-only XMLHttpRequest host adapter; validate with transform control",
+        "runtimeReads": [],
+        "deviceCmyk": "Polynomial fallback unless explicit ICCBased; no default CMYK ICC URL supplied",
+        "diagnostics": [],
+        "stderr": "",
+        "sha256": "06bc3827820b33249beeb6f9052d5c2f1af586b998c4be625addbe8724661a63"
+      },
+      {
+        "name": "explicit-g",
+        "pdfjs": "6.5.438",
+        "build": "0a4153349",
+        "backend": "@napi-rs/canvas (Node Canvas; NOT browser Canvas)",
+        "canvasVersion": "1.1.1",
+        "node": "v24.22.1",
+        "width": 32,
+        "height": 32,
+        "dpi": 72,
+        "annotations": "ENABLE static appearances",
+        "background": "rgb(255,255,255)",
+        "useSystemFonts": false,
+        "isEvalSupported": false,
+        "xfa": false,
+        "useWorkerFetch": true,
+        "useWasm": true,
+        "icc": "Requested via custom local read-only XMLHttpRequest host adapter; validate with transform control",
+        "runtimeReads": [],
+        "deviceCmyk": "Polynomial fallback unless explicit ICCBased; no default CMYK ICC URL supplied",
+        "diagnostics": [],
+        "stderr": "",
+        "sha256": "06bc3827820b33249beeb6f9052d5c2f1af586b998c4be625addbe8724661a63"
+      },
+      {
+        "name": "explicit-icc",
+        "pdfjs": "6.5.438",
+        "build": "0a4153349",
+        "backend": "@napi-rs/canvas (Node Canvas; NOT browser Canvas)",
+        "canvasVersion": "1.1.1",
+        "node": "v24.22.1",
+        "width": 32,
+        "height": 32,
+        "dpi": 72,
+        "annotations": "ENABLE static appearances",
+        "background": "rgb(255,255,255)",
+        "useSystemFonts": false,
+        "isEvalSupported": false,
+        "xfa": false,
+        "useWorkerFetch": true,
+        "useWasm": true,
+        "icc": "Requested via custom local read-only XMLHttpRequest host adapter; validate with transform control",
+        "runtimeReads": [
+          {
+            "file": "wasm/qcms_bg.wasm",
+            "bytes": 96589
+          }
+        ],
+        "deviceCmyk": "Polynomial fallback unless explicit ICCBased; no default CMYK ICC URL supplied",
+        "diagnostics": [],
+        "stderr": "",
+        "sha256": "f2fabc40cbfb73484e6e056b3f09635128e7556f6a4321701e16ef3927917fb5"
+      },
+      {
+        "name": "form-explicit-g",
+        "pdfjs": "6.5.438",
+        "build": "0a4153349",
+        "backend": "@napi-rs/canvas (Node Canvas; NOT browser Canvas)",
+        "canvasVersion": "1.1.1",
+        "node": "v24.22.1",
+        "width": 32,
+        "height": 32,
+        "dpi": 72,
+        "annotations": "ENABLE static appearances",
+        "background": "rgb(255,255,255)",
+        "useSystemFonts": false,
+        "isEvalSupported": false,
+        "xfa": false,
+        "useWorkerFetch": true,
+        "useWasm": true,
+        "icc": "Requested via custom local read-only XMLHttpRequest host adapter; validate with transform control",
+        "runtimeReads": [],
+        "deviceCmyk": "Polynomial fallback unless explicit ICCBased; no default CMYK ICC URL supplied",
+        "diagnostics": [],
+        "stderr": "",
+        "sha256": "06bc3827820b33249beeb6f9052d5c2f1af586b998c4be625addbe8724661a63"
+      },
+      {
+        "name": "form-implicit-sc",
+        "pdfjs": "6.5.438",
+        "build": "0a4153349",
+        "backend": "@napi-rs/canvas (Node Canvas; NOT browser Canvas)",
+        "canvasVersion": "1.1.1",
+        "node": "v24.22.1",
+        "width": 32,
+        "height": 32,
+        "dpi": 72,
+        "annotations": "ENABLE static appearances",
+        "background": "rgb(255,255,255)",
+        "useSystemFonts": false,
+        "isEvalSupported": false,
+        "xfa": false,
+        "useWorkerFetch": true,
+        "useWasm": true,
+        "icc": "Requested via custom local read-only XMLHttpRequest host adapter; validate with transform control",
+        "runtimeReads": [],
+        "deviceCmyk": "Polynomial fallback unless explicit ICCBased; no default CMYK ICC URL supplied",
+        "diagnostics": [],
+        "stderr": "",
+        "sha256": "06bc3827820b33249beeb6f9052d5c2f1af586b998c4be625addbe8724661a63"
+      },
+      {
+        "name": "implicit-SC",
+        "pdfjs": "6.5.438",
+        "build": "0a4153349",
+        "backend": "@napi-rs/canvas (Node Canvas; NOT browser Canvas)",
+        "canvasVersion": "1.1.1",
+        "node": "v24.22.1",
+        "width": 32,
+        "height": 32,
+        "dpi": 72,
+        "annotations": "ENABLE static appearances",
+        "background": "rgb(255,255,255)",
+        "useSystemFonts": false,
+        "isEvalSupported": false,
+        "xfa": false,
+        "useWorkerFetch": true,
+        "useWasm": true,
+        "icc": "Requested via custom local read-only XMLHttpRequest host adapter; validate with transform control",
+        "runtimeReads": [],
+        "deviceCmyk": "Polynomial fallback unless explicit ICCBased; no default CMYK ICC URL supplied",
+        "diagnostics": [],
+        "stderr": "",
+        "sha256": "06bc3827820b33249beeb6f9052d5c2f1af586b998c4be625addbe8724661a63"
+      },
+      {
+        "name": "implicit-sc",
+        "pdfjs": "6.5.438",
+        "build": "0a4153349",
+        "backend": "@napi-rs/canvas (Node Canvas; NOT browser Canvas)",
+        "canvasVersion": "1.1.1",
+        "node": "v24.22.1",
+        "width": 32,
+        "height": 32,
+        "dpi": 72,
+        "annotations": "ENABLE static appearances",
+        "background": "rgb(255,255,255)",
+        "useSystemFonts": false,
+        "isEvalSupported": false,
+        "xfa": false,
+        "useWorkerFetch": true,
+        "useWasm": true,
+        "icc": "Requested via custom local read-only XMLHttpRequest host adapter; validate with transform control",
+        "runtimeReads": [],
+        "deviceCmyk": "Polynomial fallback unless explicit ICCBased; no default CMYK ICC URL supplied",
+        "diagnostics": [],
+        "stderr": "",
+        "sha256": "06bc3827820b33249beeb6f9052d5c2f1af586b998c4be625addbe8724661a63"
+      },
+      {
+        "name": "implicit-scn",
+        "pdfjs": "6.5.438",
+        "build": "0a4153349",
+        "backend": "@napi-rs/canvas (Node Canvas; NOT browser Canvas)",
+        "canvasVersion": "1.1.1",
+        "node": "v24.22.1",
+        "width": 32,
+        "height": 32,
+        "dpi": 72,
+        "annotations": "ENABLE static appearances",
+        "background": "rgb(255,255,255)",
+        "useSystemFonts": false,
+        "isEvalSupported": false,
+        "xfa": false,
+        "useWorkerFetch": true,
+        "useWasm": true,
+        "icc": "Requested via custom local read-only XMLHttpRequest host adapter; validate with transform control",
+        "runtimeReads": [],
+        "deviceCmyk": "Polynomial fallback unless explicit ICCBased; no default CMYK ICC URL supplied",
+        "diagnostics": [],
+        "stderr": "",
+        "sha256": "06bc3827820b33249beeb6f9052d5c2f1af586b998c4be625addbe8724661a63"
+      },
+      {
+        "name": "initial-comparison",
+        "pdfjs": "6.5.438",
+        "build": "0a4153349",
+        "backend": "@napi-rs/canvas (Node Canvas; NOT browser Canvas)",
+        "canvasVersion": "1.1.1",
+        "node": "v24.22.1",
+        "width": 256,
+        "height": 192,
+        "dpi": 72,
+        "annotations": "ENABLE static appearances",
+        "background": "rgb(255,255,255)",
+        "useSystemFonts": false,
+        "isEvalSupported": false,
+        "xfa": false,
+        "useWorkerFetch": true,
+        "useWasm": true,
+        "icc": "Requested via custom local read-only XMLHttpRequest host adapter; validate with transform control",
+        "runtimeReads": [
+          {
+            "file": "wasm/qcms_bg.wasm",
+            "bytes": 96589
+          }
+        ],
+        "deviceCmyk": "Polynomial fallback unless explicit ICCBased; no default CMYK ICC URL supplied",
+        "diagnostics": [
+          "Warning: No CMYK ICC profile support due to missing `iccUrl` API option"
+        ],
+        "stderr": "Warning: No CMYK ICC profile support due to missing `iccUrl` API option\n",
+        "sha256": "86f940234fa0b37568da1f34ff84a313dd6b7ab92c561d722dd0faf8106347f2"
+      },
+      {
+        "name": "initial-device-cmyk",
+        "pdfjs": "6.5.438",
+        "build": "0a4153349",
+        "backend": "@napi-rs/canvas (Node Canvas; NOT browser Canvas)",
+        "canvasVersion": "1.1.1",
+        "node": "v24.22.1",
+        "width": 32,
+        "height": 32,
+        "dpi": 72,
+        "annotations": "ENABLE static appearances",
+        "background": "rgb(255,255,255)",
+        "useSystemFonts": false,
+        "isEvalSupported": false,
+        "xfa": false,
+        "useWorkerFetch": true,
+        "useWasm": true,
+        "icc": "Requested via custom local read-only XMLHttpRequest host adapter; validate with transform control",
+        "runtimeReads": [
+          {
+            "file": "wasm/qcms_bg.wasm",
+            "bytes": 96589
+          }
+        ],
+        "deviceCmyk": "Polynomial fallback unless explicit ICCBased; no default CMYK ICC URL supplied",
+        "diagnostics": [
+          "Warning: No CMYK ICC profile support due to missing `iccUrl` API option"
+        ],
+        "stderr": "Warning: No CMYK ICC profile support due to missing `iccUrl` API option\n",
+        "sha256": "ab73fb0960908b046380dba39501a5b457a0816e1e7525e813cd9764200bdc78"
+      }
+    ],
+    "pairs": [
+      {
+        "left": "direct",
+        "right": "default",
+        "different_pixels": 28672,
+        "total_pixels": 32768,
+        "maximum_channel_difference": 109,
+        "mean_absolute_channel_difference": 34.908854166666664
+      },
+      {
+        "left": "implicit-sc",
+        "right": "explicit-g",
+        "different_pixels": 0,
+        "total_pixels": 1024,
+        "maximum_channel_difference": 0,
+        "mean_absolute_channel_difference": 0.0
+      },
+      {
+        "left": "implicit-scn",
+        "right": "explicit-g",
+        "different_pixels": 0,
+        "total_pixels": 1024,
+        "maximum_channel_difference": 0,
+        "mean_absolute_channel_difference": 0.0
+      },
+      {
+        "left": "implicit-SC",
+        "right": "explicit-G",
+        "different_pixels": 0,
+        "total_pixels": 1024,
+        "maximum_channel_difference": 0,
+        "mean_absolute_channel_difference": 0.0
+      },
+      {
+        "left": "form-implicit-sc",
+        "right": "form-explicit-g",
+        "different_pixels": 0,
+        "total_pixels": 1024,
+        "maximum_channel_difference": 0,
+        "mean_absolute_channel_difference": 0.0
+      },
+      {
+        "left": "initial-device-cmyk",
+        "right": "explicit-black-cmyk",
+        "different_pixels": 1024,
+        "total_pixels": 1024,
+        "maximum_channel_difference": 53,
+        "mean_absolute_channel_difference": 47.666666666666664
+      }
+    ],
+    "runtime_sha256": {
+      "legacy/build/pdf.mjs": "2792b7c390ad6d5f4245d326b70deebbc990fa4bcac691412f6df886abb9e867",
+      "legacy/build/pdf.worker.mjs": "8336aabf764cb08c818555a2fd2545e4fed10837146de927564875c93b3c4f83",
+      "wasm/qcms_bg.wasm": "663d86126d5f5fcb1c61490f94353e2a8375660b8c5498ab3ebab5a34b08800e"
+    }
+  }
+}

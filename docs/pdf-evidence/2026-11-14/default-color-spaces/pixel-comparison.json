@@ -1,0 +1,28 @@
+{
+  "baseline": {
+    "different_pixels": 100352,
+    "total_pixels": 131072,
+    "mean_absolute_channel_difference": 36.895833333333336,
+    "maximum_channel_difference": 167
+  },
+  "fixed": {
+    "different_pixels": 0,
+    "total_pixels": 131072,
+    "mean_absolute_channel_difference": 0.0,
+    "maximum_channel_difference": 0
+  },
+  "mupdf": {
+    "different_pixels": 0,
+    "total_pixels": 131072,
+    "mean_absolute_channel_difference": 0.0,
+    "maximum_channel_difference": 0
+  },
+  "explicit_unchanged": true,
+  "unprofiled_unchanged": true,
+  "fixed_vs_mupdf_direct": {
+    "different_pixels": 43008,
+    "total_pixels": 131072,
+    "mean_absolute_channel_difference": 0.20052083333333334,
+    "maximum_channel_difference": 1
+  }
+}

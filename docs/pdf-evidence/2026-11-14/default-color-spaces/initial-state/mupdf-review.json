@@ -1,0 +1,218 @@
+{
+  "pymupdf": "1.26.6",
+  "mupdf": "1.26.11",
+  "profileName": "Original linear Gray reviewer control",
+  "profileSha256": "44d0592231ae93b041f64314d07cab407ff5511fb3cb4bb6a1373fba9f00cfea",
+  "profileTags": {
+    "desc": [
+      180,
+      128
+    ],
+    "cprt": [
+      308,
+      42
+    ],
+    "wtpt": [
+      352,
+      20
+    ],
+    "kTRC": [
+      372,
+      14
+    ]
+  },
+  "renders": [
+    {
+      "name": "explicit-G",
+      "center": [
+        136,
+        136,
+        136
+      ],
+      "width": 32,
+      "height": 32,
+      "rgbSha256": "e232a0c12784aa131bf62ffc7a49865e1e6e1ccecb05234f211a27200c016f11",
+      "warnings": ""
+    },
+    {
+      "name": "explicit-black-cmyk",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "width": 32,
+      "height": 32,
+      "rgbSha256": "e80232b4d18d0bb7e794be263ba937626f383f9917d4b8a737ba893a8f752293",
+      "warnings": ""
+    },
+    {
+      "name": "explicit-device",
+      "center": [
+        136,
+        136,
+        136
+      ],
+      "width": 32,
+      "height": 32,
+      "rgbSha256": "e232a0c12784aa131bf62ffc7a49865e1e6e1ccecb05234f211a27200c016f11",
+      "warnings": ""
+    },
+    {
+      "name": "explicit-g",
+      "center": [
+        136,
+        136,
+        136
+      ],
+      "width": 32,
+      "height": 32,
+      "rgbSha256": "e232a0c12784aa131bf62ffc7a49865e1e6e1ccecb05234f211a27200c016f11",
+      "warnings": ""
+    },
+    {
+      "name": "explicit-icc",
+      "center": [
+        136,
+        136,
+        136
+      ],
+      "width": 32,
+      "height": 32,
+      "rgbSha256": "e232a0c12784aa131bf62ffc7a49865e1e6e1ccecb05234f211a27200c016f11",
+      "warnings": ""
+    },
+    {
+      "name": "form-explicit-g",
+      "center": [
+        136,
+        136,
+        136
+      ],
+      "width": 32,
+      "height": 32,
+      "rgbSha256": "e232a0c12784aa131bf62ffc7a49865e1e6e1ccecb05234f211a27200c016f11",
+      "warnings": ""
+    },
+    {
+      "name": "form-implicit-sc",
+      "center": [
+        136,
+        136,
+        136
+      ],
+      "width": 32,
+      "height": 32,
+      "rgbSha256": "e232a0c12784aa131bf62ffc7a49865e1e6e1ccecb05234f211a27200c016f11",
+      "warnings": ""
+    },
+    {
+      "name": "implicit-SC",
+      "center": [
+        136,
+        136,
+        136
+      ],
+      "width": 32,
+      "height": 32,
+      "rgbSha256": "e232a0c12784aa131bf62ffc7a49865e1e6e1ccecb05234f211a27200c016f11",
+      "warnings": ""
+    },
+    {
+      "name": "implicit-sc",
+      "center": [
+        136,
+        136,
+        136
+      ],
+      "width": 32,
+      "height": 32,
+      "rgbSha256": "e232a0c12784aa131bf62ffc7a49865e1e6e1ccecb05234f211a27200c016f11",
+      "warnings": ""
+    },
+    {
+      "name": "implicit-scn",
+      "center": [
+        136,
+        136,
+        136
+      ],
+      "width": 32,
+      "height": 32,
+      "rgbSha256": "e232a0c12784aa131bf62ffc7a49865e1e6e1ccecb05234f211a27200c016f11",
+      "warnings": ""
+    },
+    {
+      "name": "initial-comparison",
+      "center": [
+        136,
+        136,
+        136
+      ],
+      "width": 256,
+      "height": 192,
+      "rgbSha256": "7f5398ed17cd4ac6b323c4b57d54902d880a714ca50920a82418e9ab78d8d463",
+      "warnings": ""
+    },
+    {
+      "name": "initial-device-cmyk",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "width": 32,
+      "height": 32,
+      "rgbSha256": "e80232b4d18d0bb7e794be263ba937626f383f9917d4b8a737ba893a8f752293",
+      "warnings": ""
+    },
+    {
+      "name": "initial-direct-icc",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "width": 32,
+      "height": 32,
+      "rgbSha256": "e80232b4d18d0bb7e794be263ba937626f383f9917d4b8a737ba893a8f752293",
+      "warnings": ""
+    },
+    {
+      "name": "sep-explicit-device",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "width": 32,
+      "height": 32,
+      "rgbSha256": "e80232b4d18d0bb7e794be263ba937626f383f9917d4b8a737ba893a8f752293",
+      "warnings": ""
+    },
+    {
+      "name": "sep-explicit-g",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "width": 32,
+      "height": 32,
+      "rgbSha256": "e80232b4d18d0bb7e794be263ba937626f383f9917d4b8a737ba893a8f752293",
+      "warnings": ""
+    },
+    {
+      "name": "sep-implicit",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "width": 32,
+      "height": 32,
+      "rgbSha256": "e80232b4d18d0bb7e794be263ba937626f383f9917d4b8a737ba893a8f752293",
+      "warnings": ""
+    }
+  ]
+}

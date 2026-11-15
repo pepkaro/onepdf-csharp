@@ -1,0 +1,46 @@
+{
+  "base": "d813ec6ba9dd138f7d2a6f3b8f5a51dc9c5f4bc8",
+  "files": [
+    {
+      "path": "src/OnePdf/ColorSpaces/ColorSpaceCache.cs",
+      "sha256": "b34811804c2efbea8e44960999d01a49afde3065f718df641e870dd353112092",
+      "new": false
+    },
+    {
+      "path": "src/OnePdf/ColorSpaces/ColorSpaceResolver.cs",
+      "sha256": "4bedbb67e81211ca80851d4649f46253472d63f65301f59edf6cf8e3e9398d03",
+      "new": false
+    },
+    {
+      "path": "src/OnePdf/ColorSpaces/PdfColorSpace.cs",
+      "sha256": "49b7c847d46fa340564ed295d1d98854124d60bdcf2650977e649a4fa76934a2",
+      "new": false
+    },
+    {
+      "path": "src/OnePdf/Content/ContentInterpreter.Patterns.cs",
+      "sha256": "77dc6732a2d5a74eae88b892314c4548714c72da1de899593e2e55b19d13ecb7",
+      "new": false
+    },
+    {
+      "path": "src/OnePdf/Content/ContentInterpreter.cs",
+      "sha256": "e1ba8f755c0503f112435cfbe86c02a706157841c93e89836a1313f9d72af2b5",
+      "new": false
+    },
+    {
+      "path": "src/OnePdf/Content/GState.cs",
+      "sha256": "25d07df70d2c378bca81e8eaae863b3fc4046845f04ddcb12387c88a11d928eb",
+      "new": false
+    },
+    {
+      "path": "tests/OnePdf.Tests/Content/DefaultColorSpaceTests.cs",
+      "sha256": "83ad452be8ae42332c04a00b9450fa137d62cc4c05cdd4d5dea1959cff573756",
+      "new": true
+    }
+  ],
+  "patch_sha256": "4def99e9d68119d6ed5589a6a818b167e2c323c245454a8c4757fe0e69dade70",
+  "production_files": 6,
+  "new_MIT_test_files": 1,
+  "committed": false,
+  "pushed": false,
+  "changes_to_versions_dependencies_identity_or_signing": false
+}

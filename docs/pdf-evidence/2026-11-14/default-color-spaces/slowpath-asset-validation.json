@@ -1,0 +1,25 @@
+{
+  "comparison": "All 20 final hot/slow-path prototype PNGs are byte-identical to the held corrected fastpath outputs. No earlier outputs were overwritten.",
+  "outputs": {
+    "slowpath-comparison.png": "e625ae713d37505fe26d8cb433a6c97dde1c5d799296996dc3ae38d6d44bbe2b",
+    "slowpath-default.png": "49b10133b5e68dc9c9b443e30c46e21456da68c27d4e187c20c8a90763d0a321",
+    "slowpath-device.png": "c9725f87a55410698046da21e16df75595330d7922bf8881700cebae0e2417e5",
+    "slowpath-direct.png": "49b10133b5e68dc9c9b443e30c46e21456da68c27d4e187c20c8a90763d0a321",
+    "initial-state/slowpath-explicit-black-cmyk.png": "0206606c3e2d233dc6441f52d46bb5c1d805bc3f6861f3093e47f09a05d6bb71",
+    "initial-state/slowpath-explicit-device.png": "cd0c0a4d31df33e36a0c9fe31a16e29282cc7adf8fcf55bea324274a4aa7aed1",
+    "initial-state/slowpath-explicit-g.png": "cd0c0a4d31df33e36a0c9fe31a16e29282cc7adf8fcf55bea324274a4aa7aed1",
+    "initial-state/slowpath-explicit-G.png": "cd0c0a4d31df33e36a0c9fe31a16e29282cc7adf8fcf55bea324274a4aa7aed1",
+    "initial-state/slowpath-explicit-icc.png": "cd0c0a4d31df33e36a0c9fe31a16e29282cc7adf8fcf55bea324274a4aa7aed1",
+    "initial-state/slowpath-form-explicit-g.png": "cd0c0a4d31df33e36a0c9fe31a16e29282cc7adf8fcf55bea324274a4aa7aed1",
+    "initial-state/slowpath-form-implicit-sc.png": "cd0c0a4d31df33e36a0c9fe31a16e29282cc7adf8fcf55bea324274a4aa7aed1",
+    "initial-state/slowpath-implicit-sc.png": "cd0c0a4d31df33e36a0c9fe31a16e29282cc7adf8fcf55bea324274a4aa7aed1",
+    "initial-state/slowpath-implicit-SC.png": "cd0c0a4d31df33e36a0c9fe31a16e29282cc7adf8fcf55bea324274a4aa7aed1",
+    "initial-state/slowpath-implicit-scn.png": "cd0c0a4d31df33e36a0c9fe31a16e29282cc7adf8fcf55bea324274a4aa7aed1",
+    "initial-state/slowpath-initial-comparison.png": "a42b5bd0b883ef752d1d79d560dc15c9f959ef6c949011ced5541aa0f7a612f4",
+    "initial-state/slowpath-initial-device-cmyk.png": "0206606c3e2d233dc6441f52d46bb5c1d805bc3f6861f3093e47f09a05d6bb71",
+    "initial-state/slowpath-initial-direct-icc.png": "b06bc2ec23323457bddde50fabbba67f9ae210b3f71057c130ab779fc9abd8ce",
+    "initial-state/slowpath-sep-explicit-device.png": "e8d73410467bd63baf3821ec8c4a8514bf43bdea4e38f18a3c26df2184f26991",
+    "initial-state/slowpath-sep-explicit-g.png": "e8d73410467bd63baf3821ec8c4a8514bf43bdea4e38f18a3c26df2184f26991",
+    "initial-state/slowpath-sep-implicit.png": "e8d73410467bd63baf3821ec8c4a8514bf43bdea4e38f18a3c26df2184f26991"
+  }
+}
