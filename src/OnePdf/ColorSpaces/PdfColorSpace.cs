@@ -158,7 +158,7 @@ public sealed class PdfColorSpace
     /// </summary>
     /// <param name="document">The document that owns the object (diagnostics and limits).</param>
     /// <param name="colorSpace">The object, for example the value of a <c>/ColorSpace</c> entry or an operand of <c>cs</c>.</param>
-    /// <param name="resources">The resource dictionary used to look up named spaces, or null.</param>
+    /// <param name="resources">The resource dictionary used to look up named spaces and DefaultGray/DefaultRGB/DefaultCMYK substitutions, or null.</param>
     public static PdfColorSpace? Resolve(PdfDocument document, PdfObject? colorSpace, PdfDictionary? resources = null)
     {
         ArgumentNullException.ThrowIfNull(document);

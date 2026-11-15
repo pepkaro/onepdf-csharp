@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using OnePdf.FontPrograms;
 using OnePdf.PdfFonts;
 
@@ -41,8 +42,8 @@ internal sealed partial class ContentInterpreter
     private readonly List<byte> _mc = [];
     private readonly HashSet<string> _reported = new(StringComparer.Ordinal);
     private readonly HashSet<int> _activeForms;
-    private readonly Dictionary<(int Number, string Name, PdfMatrix Base), PdfPattern?> _patterns = [];
-    private readonly Dictionary<PdfObject, PdfShading?> _shadings = new(ReferenceEqualityComparer.Instance);
+    private readonly Dictionary<(int Number, string Name, PdfMatrix Base, PdfDictionary? Resources), PdfPattern?> _patterns = [];
+    private readonly Dictionary<(PdfObject Object, PdfDictionary? Resources), PdfShading?> _shadings = [];
     private readonly ColorSpaceCache _spaces;
     private readonly OptionalContentState _oc;
     private readonly Dictionary<int, FontInfo> _fontsByRef = [];
@@ -400,9 +401,34 @@ internal sealed partial class ContentInterpreter
         return SnapshotCore();
     }
 
-    private PdfGraphicsState SnapshotCore() => new(
-        _g.Ctm, _g.Fill, _g.Stroke, _g.LineWidth, _g.LineCap, _g.LineJoin, _g.MiterLimit, _g.Dash, _g.DashPhase, _g.Flatness,
+    private PdfGraphicsState SnapshotCore()
+    {
+        if (_spaces.HasDefaults(_res))
+        {
+            return SnapshotWithDefaultColors();
+        }
+
+        return new PdfGraphicsState(
+            _g.Ctm, _g.Fill, _g.Stroke, _g.LineWidth, _g.LineCap, _g.LineJoin, _g.MiterLimit, _g.Dash, _g.DashPhase, _g.Flatness,
+            _g.Intent, _g.FillAlpha, _g.StrokeAlpha, _g.Blend, _g.SoftMask, _g.Ais, _g.FillOverprint, _g.StrokeOverprint, _g.OverprintMode) { TextKnockout = _g.TextKnockout };
+    }
+
+    // Keep default-colour temporaries out of the common no-default snapshot path.
+    [MethodImpl(MethodImplOptions.NoInlining)]
+    private PdfGraphicsState SnapshotWithDefaultColors() => new(
+        _g.Ctm, PaintColor(_g.Fill, _g.FillDevice), PaintColor(_g.Stroke, _g.StrokeDevice), _g.LineWidth, _g.LineCap, _g.LineJoin, _g.MiterLimit, _g.Dash, _g.DashPhase, _g.Flatness,
         _g.Intent, _g.FillAlpha, _g.StrokeAlpha, _g.Blend, _g.SoftMask, _g.Ais, _g.FillOverprint, _g.StrokeOverprint, _g.OverprintMode) { TextKnockout = _g.TextKnockout };
+
+    private PdfColor PaintColor(PdfColor color, bool device)
+    {
+        if (!device)
+        {
+            return color;
+        }
+
+        PdfColorSpace space = _spaces.Device(color.Space, _res);
+        return ReferenceEquals(space, color.Space) ? color : ColorOps.ToColor(space, [color.C0, color.C1, color.C2, color.C3]);
+    }
 
     private void Dispatch(ContentOp op, ContentLexer lx)
     {
@@ -936,11 +962,13 @@ internal sealed partial class ContentInterpreter
         if (fill)
         {
             _g.FillCs = space;
+            _g.FillDevice = true;
             _g.Fill = c;
         }
         else
         {
             _g.StrokeCs = space;
+            _g.StrokeDevice = true;
             _g.Stroke = c;
         }
     }
@@ -954,7 +982,7 @@ internal sealed partial class ContentInterpreter
         }
 
         string name = _ops[_nOps - 1].Name!;
-        PdfColorSpace? def = _spaces.Named(name, _res);
+        PdfColorSpace? def = _spaces.Selection(name, _res, out bool device);
         if (def is null)
         {
             Report(PdfSeverity.Warning, "Colour space /" + name + " is not defined or not supported; the operator was skipped.");
@@ -965,11 +993,13 @@ internal sealed partial class ContentInterpreter
         if (fill)
         {
             _g.FillCs = def;
+            _g.FillDevice = device;
             _g.Fill = initial;
         }
         else
         {
             _g.StrokeCs = def;
+            _g.StrokeDevice = device;
             _g.Stroke = initial;
         }
     }

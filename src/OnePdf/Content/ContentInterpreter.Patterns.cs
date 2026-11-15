@@ -4,10 +4,10 @@ internal sealed partial class ContentInterpreter
 {
     // ---- shadings ----
 
-    /// <summary>Builds (once per object) the shading for <c>sh</c> or a shading pattern; null with a diagnostic when unusable.</summary>
+    /// <summary>Builds (once per object and resource scope) the shading for <c>sh</c> or a shading pattern; null with a diagnostic when unusable.</summary>
     private PdfShading? LoadShading(PdfObject obj)
     {
-        if (_shadings.TryGetValue(obj, out PdfShading? cached))
+        if (_shadings.TryGetValue((obj, _res), out PdfShading? cached))
         {
             return cached;
         }
@@ -30,7 +30,7 @@ internal sealed partial class ContentInterpreter
             Report(PdfSeverity.Error, "A shading could not be read and was skipped: " + e.Message);
         }
 
-        _shadings[obj] = shading;
+        _shadings[(obj, _res)] = shading;
         return shading;
     }
 
@@ -43,7 +43,7 @@ internal sealed partial class ContentInterpreter
     private PdfPattern? GetPattern(string name, PdfObject obj)
     {
         int number = obj.Reference?.Number ?? -1;
-        var key = (number, name, _patternBase);
+        var key = (number, name, _patternBase, _res);
         if (number >= 0 && _patterns.TryGetValue(key, out PdfPattern? known))
         {
             return known;
