@@ -414,6 +414,7 @@ internal sealed partial class ContentInterpreter
         bool knockout = transparency && group!.GetBool("K");
 
         PdfDictionary? savedRes = _res;
+        PatternEntryState savedEntry = _streamEntry;
         int savedQBase = _qBase, savedMcBase = _mcBase, savedCompat = _compat, savedSkipped = _skippedSaves;
         bool savedInText = _inText, savedTextClip = _textClipPending, savedPending = _pendingClip, savedEo = _clipEvenOdd;
         PdfMatrix savedTm = _tm, savedTlm = _tlm, savedPatternBase = _patternBase;
@@ -458,6 +459,7 @@ internal sealed partial class ContentInterpreter
 
             // Patterns selected inside the form are anchored to the form's space (ISO 32000-2 8.7.3.1).
             _patternBase = _g.Ctm;
+            _streamEntry = new PatternEntryState(_g);
 
             if (bbox is { } b)
             {
@@ -500,6 +502,7 @@ internal sealed partial class ContentInterpreter
                 _tm = savedTm;
                 _tlm = savedTlm;
                 _patternBase = savedPatternBase;
+                _streamEntry = savedEntry;
                 _path.Clear();
             }
         }

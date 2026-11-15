@@ -42,6 +42,10 @@ internal sealed class GState
     /// <summary>Clips pushed to the device since this state was created by <c>q</c>; popped when it is restored.</summary>
     public int ClipCount;
 
+    public PdfGraphicsState Snapshot() => new(
+        Ctm, Fill, Stroke, LineWidth, LineCap, LineJoin, MiterLimit, Dash, DashPhase, Flatness,
+        Intent, FillAlpha, StrokeAlpha, Blend, SoftMask, Ais, FillOverprint, StrokeOverprint, OverprintMode) { TextKnockout = TextKnockout };
+
     public GState Clone()
     {
         var g = (GState)MemberwiseClone();
