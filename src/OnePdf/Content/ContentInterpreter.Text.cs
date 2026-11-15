@@ -19,6 +19,7 @@ internal sealed partial class ContentInterpreter
                 }
 
                 _inText = true;
+                _textObject = ++_nextTextObject;
                 _tm = _tlm = PdfMatrix.Identity;
                 return true;
             case ContentOp.EndText:
@@ -29,6 +30,7 @@ internal sealed partial class ContentInterpreter
                 }
 
                 _inText = false;
+                _textObject = 0;
                 if (_textClipPending)
                 {
                     PdfGraphicsState s = Snapshot();

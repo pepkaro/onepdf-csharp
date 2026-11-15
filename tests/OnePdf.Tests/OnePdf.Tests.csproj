@@ -48,6 +48,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Extraction/golden.txt" LogicalName="golden.txt" />
+    <EmbeddedResource Include="Content/OriginalFixtures/text-q-restore-both-matrices-pdf20.pdf" LogicalName="OriginalTextMatrixRestore.pdf" />
   </ItemGroup>
 
   <ItemGroup>
