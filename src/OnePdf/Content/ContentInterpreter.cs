@@ -37,6 +37,8 @@ internal sealed partial class ContentInterpreter
     private readonly Operand[] _ops = new Operand[OperandCapacity];
     private readonly double[] _a = new double[OperandCapacity];
     private readonly List<GState> _saved = [];
+    // Only q inside a text object needs these extra values (corrected ISO 32000-2:2020 9.4.1).
+    private readonly List<SavedTextMatrices> _savedText = [];
     private readonly List<GState> _spare = []; // states released by Q, reused by the next q
     private readonly List<byte> _mc = [];
     private readonly HashSet<string> _reported = new(StringComparer.Ordinal);
@@ -66,6 +68,8 @@ internal sealed partial class ContentInterpreter
     private bool _pendingClip;
     private bool _clipEvenOdd;
     private bool _inText;
+    private long _textObject;
+    private long _nextTextObject;
     private bool _textClipPending;
     private bool _noColor;
     private PdfMatrix _patternBase = PdfMatrix.Identity;
@@ -78,6 +82,8 @@ internal sealed partial class ContentInterpreter
     private FontInfo? _defaultFont;
     private int _type3Depth;
     private bool _inCharProc;
+
+    private readonly record struct SavedTextMatrices(int Depth, long TextObject, PdfMatrix Tm, PdfMatrix Tlm);
 
     private ContentInterpreter(PdfDocument doc, IPdfDevice device, PdfInterpretOptions options, CancellationToken ct)
     {
@@ -217,9 +223,12 @@ internal sealed partial class ContentInterpreter
     {
         _g = new GState { Ctm = ctm };
         _saved.Clear();
+        _savedText.Clear();
         _path.Clear();
         _pendingClip = false;
         _inText = false;
+        _textObject = 0;
+        _tm = _tlm = PdfMatrix.Identity;
         _textClipPending = false;
         _skippedSaves = 0;
         _qBase = 0;
@@ -239,6 +248,18 @@ internal sealed partial class ContentInterpreter
     {
         PopClips(_g);
         GState done = _g;
+        if (_savedText.Count > 0 && _savedText[^1].Depth == _saved.Count)
+        {
+            SavedTextMatrices text = _savedText[^1];
+            _savedText.RemoveAt(_savedText.Count - 1);
+            // Malformed saves crossing BT/ET must not revive another text object's matrices.
+            if (_inText && text.TextObject == _textObject)
+            {
+                _tm = text.Tm;
+                _tlm = text.Tlm;
+            }
+        }
+
         _g = _saved[^1];
         _saved.RemoveAt(_saved.Count - 1);
         if (_spare.Count < 64)
@@ -426,6 +447,11 @@ internal sealed partial class ContentInterpreter
                 else
                 {
                     _saved.Add(_g);
+                    if (_inText)
+                    {
+                        _savedText.Add(new SavedTextMatrices(_saved.Count, _textObject, _tm, _tlm));
+                    }
+
                     GState next;
                     if (_spare.Count > 0)
                     {

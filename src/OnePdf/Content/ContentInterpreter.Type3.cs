@@ -112,6 +112,7 @@ internal sealed partial class ContentInterpreter
         bool savedInText = _inText, savedTextClip = _textClipPending, savedPending = _pendingClip, savedEo = _clipEvenOdd;
         bool savedNoColor = _noColor, savedInCharProc = _inCharProc;
         PdfMatrix savedTm = _tm, savedTlm = _tlm, savedPatternBase = _patternBase;
+        long savedTextObject = _textObject;
         int baseSaved = _saved.Count, baseMc = _mc.Count;
         bool began = false;
         try
@@ -133,6 +134,7 @@ internal sealed partial class ContentInterpreter
             _path.Clear();
             _pendingClip = false;
             _inText = false;
+            _textObject = 0;
             _textClipPending = false;
             _skippedSaves = 0;
             _g.Ctm = matrix;
@@ -197,6 +199,7 @@ internal sealed partial class ContentInterpreter
                     _compat = savedCompat;
                     _skippedSaves = savedSkipped;
                     _inText = savedInText;
+                    _textObject = savedTextObject;
                     _textClipPending = savedTextClip;
                     _pendingClip = savedPending;
                     _clipEvenOdd = savedEo;
