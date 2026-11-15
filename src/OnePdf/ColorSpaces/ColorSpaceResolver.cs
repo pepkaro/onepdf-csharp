@@ -10,10 +10,44 @@ internal static class ColorSpaceResolver
 
     public static PdfColorSpace? Resolve(PdfDocument doc, PdfObject? obj, PdfDictionary? resources, int objectNumber = -1)
     {
-        return Resolve(doc, obj, resources, 0, objectNumber, allowPattern: true);
+        return Resolve(doc, obj, resources, 0, objectNumber, allowPattern: true, useDefaults: true);
     }
 
-    private static PdfColorSpace? Resolve(PdfDocument doc, PdfObject? obj, PdfDictionary? resources, int depth, int objNum, bool allowPattern)
+    /// <summary>The original top-level device space, including resource aliases, before default substitution.</summary>
+    public static PdfColorSpace? DeviceOrigin(PdfDocument doc, PdfObject? obj, PdfDictionary? resources)
+    {
+        for (int depth = 0; depth <= Math.Min(doc.Limits.MaxRecursionDepth, 8); depth++)
+        {
+            bool array = obj is PdfArray;
+            if (obj is PdfArray a)
+            {
+                obj = a.Count > 0 ? a[0] : null;
+            }
+
+            if (obj is not PdfName name)
+            {
+                return null;
+            }
+
+            PdfColorSpace? device = name.Value switch
+            {
+                "DeviceGray" or "G" => PdfColorSpace.Gray,
+                "DeviceRGB" or "RGB" => PdfColorSpace.Rgb,
+                "DeviceCMYK" or "CMYK" => PdfColorSpace.Cmyk,
+                _ => null,
+            };
+            if (device is not null || array)
+            {
+                return device;
+            }
+
+            obj = resources?.GetDictionary("ColorSpace")?.Get(name.Value);
+        }
+
+        return null;
+    }
+
+    private static PdfColorSpace? Resolve(PdfDocument doc, PdfObject? obj, PdfDictionary? resources, int depth, int objNum, bool allowPattern, bool useDefaults)
     {
         // Spaces nest only a few levels in real files; the recursion limit also stops self-referencing arrays.
         if (depth > Math.Min(doc.Limits.MaxRecursionDepth, 8))
@@ -25,25 +59,29 @@ internal static class ColorSpaceResolver
         switch (obj)
         {
             case PdfName n:
-                return FromName(doc, n.Value, resources, depth, objNum, allowPattern);
+                return FromName(doc, n.Value, resources, depth, objNum, allowPattern, useDefaults);
             case PdfArray a when a.Count > 0 && a[0] is PdfName fam:
-                return FromArray(doc, a, fam.Value, resources, depth, objNum, allowPattern);
+                return FromArray(doc, a, fam.Value, resources, depth, objNum, allowPattern, useDefaults);
             default:
                 doc.ReportWarning("A colour space is neither a name nor an array.", objNum, -1);
                 return null;
         }
     }
 
-    private static PdfColorSpace? FromName(PdfDocument doc, string name, PdfDictionary? resources, int depth, int objNum, bool allowPattern)
+    private static PdfColorSpace? FromName(PdfDocument doc, string name, PdfDictionary? resources, int depth, int objNum, bool allowPattern, bool useDefaults)
     {
         switch (name)
         {
-            case "DeviceGray" or "G" or "CalGray":
+            case "DeviceGray" or "G":
+                return Device(doc, PdfColorSpace.Gray, "DefaultGray", resources, depth, objNum, useDefaults);
+            case "CalGray":
                 return PdfColorSpace.Gray;
-            case "DeviceRGB" or "RGB" or "CalRGB":
+            case "DeviceRGB" or "RGB":
+                return Device(doc, PdfColorSpace.Rgb, "DefaultRGB", resources, depth, objNum, useDefaults);
+            case "CalRGB":
                 return PdfColorSpace.Rgb;
             case "DeviceCMYK" or "CMYK":
-                return PdfColorSpace.Cmyk;
+                return Device(doc, PdfColorSpace.Cmyk, "DefaultCMYK", resources, depth, objNum, useDefaults);
             case "Pattern":
                 return allowPattern ? new PdfColorSpace(PdfColorSpaceKind.Pattern, 0) : null;
         }
@@ -51,19 +89,19 @@ internal static class ColorSpaceResolver
         if (resources?.GetDictionary("ColorSpace") is { } dict && dict.Get(name) is { } found)
         {
             // A resource may itself be a name (an alias); the depth counter bounds loops.
-            return Resolve(doc, found, resources, depth + 1, objNum, allowPattern);
+            return Resolve(doc, found, resources, depth + 1, objNum, allowPattern, useDefaults);
         }
 
         doc.ReportWarning("Colour space /" + name + " is not defined.", objNum, -1);
         return null;
     }
 
-    private static PdfColorSpace? FromArray(PdfDocument doc, PdfArray a, string family, PdfDictionary? resources, int depth, int objNum, bool allowPattern)
+    private static PdfColorSpace? FromArray(PdfDocument doc, PdfArray a, string family, PdfDictionary? resources, int depth, int objNum, bool allowPattern, bool useDefaults)
     {
         switch (family)
         {
             case "DeviceGray" or "G" or "DeviceRGB" or "RGB" or "DeviceCMYK" or "CMYK":
-                return FromName(doc, family, resources, depth, objNum, allowPattern);
+                return FromName(doc, family, resources, depth, objNum, allowPattern, useDefaults);
             case "CalGray":
                 return Cal(doc, a, PdfColorSpaceKind.CalGray, 1, objNum);
             case "CalRGB":
@@ -73,15 +111,15 @@ internal static class ColorSpaceResolver
             case "ICCBased":
                 return Icc(doc, a, resources, depth, objNum);
             case "Indexed" or "I":
-                return Indexed(doc, a, resources, depth, objNum);
+                return Indexed(doc, a, resources, depth, objNum, useDefaults);
             case "Separation":
-                return Tinted(doc, a, resources, depth, objNum, device: false);
+                return Tinted(doc, a, resources, depth, objNum, device: false, useDefaults);
             case "DeviceN":
-                return Tinted(doc, a, resources, depth, objNum, device: true);
+                return Tinted(doc, a, resources, depth, objNum, device: true, useDefaults);
             case "Pattern":
             {
                 var p = new PdfColorSpace(PdfColorSpaceKind.Pattern, 0);
-                if (a.Count > 1 && Resolve(doc, a[1], resources, depth + 1, objNum, allowPattern: false) is { } u)
+                if (a.Count > 1 && Resolve(doc, a[1], resources, depth + 1, objNum, allowPattern: false, useDefaults) is { } u)
                 {
                     return new PdfColorSpace(PdfColorSpaceKind.Pattern, u.ComponentCount) { BaseSpace = u };
                 }
@@ -93,6 +131,26 @@ internal static class ColorSpaceResolver
                 doc.ReportWarning("Unknown colour space family /" + family + ".", objNum, -1);
                 return null;
         }
+    }
+
+    private static PdfColorSpace Device(PdfDocument doc, PdfColorSpace device, string name, PdfDictionary? resources, int depth, int objNum, bool useDefaults)
+    {
+        if (!useDefaults || resources?.GetDictionary("ColorSpace")?.Get(name) is not { } replacement)
+        {
+            return device;
+        }
+
+        // ISO 32000-1 8.6.5.6: pass device components through to a compatible default. Do not remap
+        // device spaces inside the replacement again (a device default or its alternate may name itself).
+        PdfColorSpace? space = Resolve(doc, replacement, resources, depth + 1, objNum, allowPattern: false, useDefaults: false);
+        if (space is not null && space.ComponentCount == device.ComponentCount
+            && space.Kind is not (PdfColorSpaceKind.Lab or PdfColorSpaceKind.Indexed or PdfColorSpaceKind.Pattern))
+        {
+            return space;
+        }
+
+        doc.ReportWarning("Colour space /" + name + " is not a compatible default; using the device space.", objNum, -1);
+        return device;
     }
 
     private static double[]? Numbers(PdfObject? o, int count)
@@ -175,7 +233,7 @@ internal static class ColorSpaceResolver
         PdfColorSpace? alt = null;
         if (s.Dictionary.Get("Alternate") is { } altObj)
         {
-            alt = Resolve(doc, altObj, resources, depth + 1, objNum, allowPattern: false);
+            alt = Resolve(doc, altObj, resources, depth + 1, objNum, allowPattern: false, useDefaults: false);
         }
 
         if (n is not (1 or 3 or 4))
@@ -252,7 +310,7 @@ internal static class ColorSpaceResolver
         _ => 0,
     };
 
-    private static PdfColorSpace? Indexed(PdfDocument doc, PdfArray a, PdfDictionary? resources, int depth, int objNum)
+    private static PdfColorSpace? Indexed(PdfDocument doc, PdfArray a, PdfDictionary? resources, int depth, int objNum, bool useDefaults)
     {
         if (a.Count < 4)
         {
@@ -260,7 +318,7 @@ internal static class ColorSpaceResolver
             return null;
         }
 
-        PdfColorSpace? b = Resolve(doc, a[1], resources, depth + 1, objNum, allowPattern: false);
+        PdfColorSpace? b = Resolve(doc, a[1], resources, depth + 1, objNum, allowPattern: false, useDefaults);
         if (b is null || b.Kind == PdfColorSpaceKind.Indexed)
         {
             doc.ReportWarning("An Indexed colour space has no usable base space.", objNum, -1);
@@ -311,7 +369,7 @@ internal static class ColorSpaceResolver
         }
     }
 
-    private static PdfColorSpace? Tinted(PdfDocument doc, PdfArray a, PdfDictionary? resources, int depth, int objNum, bool device)
+    private static PdfColorSpace? Tinted(PdfDocument doc, PdfArray a, PdfDictionary? resources, int depth, int objNum, bool device, bool useDefaults)
     {
         if (a.Count < 4)
         {
@@ -338,7 +396,7 @@ internal static class ColorSpaceResolver
             return null;
         }
 
-        PdfColorSpace? alt = Resolve(doc, a[2], resources, depth + 1, objNum, allowPattern: false);
+        PdfColorSpace? alt = Resolve(doc, a[2], resources, depth + 1, objNum, allowPattern: false, useDefaults);
         if (alt is null || alt.Kind is PdfColorSpaceKind.Pattern)
         {
             doc.ReportWarning("A Separation or DeviceN colour space has no usable alternate space.", objNum, -1);

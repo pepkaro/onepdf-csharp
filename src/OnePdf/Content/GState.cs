@@ -9,6 +9,9 @@ internal sealed class GState
     public PdfMatrix Ctm = PdfMatrix.Identity;
     public PdfColorSpace FillCs = PdfColorSpace.Gray;
     public PdfColorSpace StrokeCs = PdfColorSpace.Gray;
+    // Keep device origins separate from a non-device space that happens to reduce to device colours.
+    public bool FillDevice = true;
+    public bool StrokeDevice = true;
     public PdfColor Fill = PdfColor.Black;
     public PdfColor Stroke = PdfColor.Black;
     public double LineWidth = 1;
@@ -55,6 +58,8 @@ internal sealed class GState
         Ctm = o.Ctm;
         FillCs = o.FillCs;
         StrokeCs = o.StrokeCs;
+        FillDevice = o.FillDevice;
+        StrokeDevice = o.StrokeDevice;
         Fill = o.Fill;
         Stroke = o.Stroke;
         LineWidth = o.LineWidth;
