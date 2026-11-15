@@ -3,7 +3,8 @@ namespace OnePdf;
 /// <summary>
 /// A pattern used as a colour (ISO 32000-2 8.7): a tiling pattern or a shading pattern. Delivered inside
 /// <see cref="PdfColor.Pattern"/> of the fill or stroke colour of a path, text or other paint call. The same instance comes
-/// back for every use of one pattern in one interpretation.
+/// back for repeated selections of one pattern with the same parent entry state and space. Different parent entry
+/// states may produce different cells even when the pattern object and matrix are the same.
 /// </summary>
 public abstract class PdfPattern
 {
@@ -57,7 +58,7 @@ public sealed class PdfShadingPattern : PdfPattern
 /// </remarks>
 public sealed class PdfTilingPattern : PdfPattern
 {
-    internal PdfTilingPattern(PdfObject source, string name, PdfMatrix matrix, bool colored, int tilingType, PdfBounds bbox, double xStep, double yStep)
+    internal PdfTilingPattern(PdfObject source, string name, PdfMatrix matrix, bool colored, int tilingType, PdfBounds bbox, double xStep, double yStep, Content.PatternEntryState entryState)
         : base(source, name, matrix)
     {
         IsColored = colored;
@@ -65,6 +66,7 @@ public sealed class PdfTilingPattern : PdfPattern
         BBox = bbox;
         XStep = xStep;
         YStep = yStep;
+        EntryState = entryState;
     }
 
     /// <summary>
@@ -94,4 +96,6 @@ public sealed class PdfTilingPattern : PdfPattern
     public PdfDisplayList? Cell { get; internal set; }
 
     internal bool CellBuilt { get; set; }
+
+    internal Content.PatternEntryState EntryState { get; }
 }

@@ -37,13 +37,13 @@ internal sealed partial class ContentInterpreter
     // ---- patterns ----
 
     /// <summary>
-    /// The pattern named by <c>scn</c>, resolved once per name and parent space. Null (with a diagnostic) when the pattern
+    /// The pattern named by <c>scn</c>, resolved once per name and parent entry state. Null (with a diagnostic) when the pattern
     /// is unusable, in which case the colour operator does nothing.
     /// </summary>
     private PdfPattern? GetPattern(string name, PdfObject obj)
     {
         int number = obj.Reference?.Number ?? -1;
-        var key = (number, name, _patternBase);
+        var key = (number, name, _patternBase, _streamEntry);
         if (number >= 0 && _patterns.TryGetValue(key, out PdfPattern? known))
         {
             return known;
@@ -120,7 +120,7 @@ internal sealed partial class ContentInterpreter
             ys = box.Height;
         }
 
-        return new PdfTilingPattern(obj, name, matrix, paint == 1, (int)tiling, box, xs, ys);
+        return new PdfTilingPattern(obj, name, matrix, paint == 1, (int)tiling, box, xs, ys, _streamEntry);
     }
 
     /// <summary>
@@ -194,6 +194,10 @@ internal sealed partial class ContentInterpreter
         _noColor = !pattern.IsColored;
         _patternBase = PdfMatrix.Identity;
         ResetState(PdfMatrix.Identity);
+        // ISO 32000-1 8.7.3.1 and 11.6.7: inherit the defining parent's entry state, not the state at
+        // selection or painting. Keep it with the pattern because its first paint may occur inside another form.
+        _g = pattern.EntryState.CreateState();
+        _streamEntry = pattern.EntryState;
         try
         {
             PdfBounds b = pattern.BBox;

@@ -41,7 +41,7 @@ internal sealed partial class ContentInterpreter
     private readonly List<byte> _mc = [];
     private readonly HashSet<string> _reported = new(StringComparer.Ordinal);
     private readonly HashSet<int> _activeForms;
-    private readonly Dictionary<(int Number, string Name, PdfMatrix Base), PdfPattern?> _patterns = [];
+    private readonly Dictionary<(int Number, string Name, PdfMatrix Base, PatternEntryState Entry), PdfPattern?> _patterns = [];
     private readonly Dictionary<PdfObject, PdfShading?> _shadings = new(ReferenceEqualityComparer.Instance);
     private readonly ColorSpaceCache _spaces;
     private readonly OptionalContentState _oc;
@@ -51,6 +51,8 @@ internal sealed partial class ContentInterpreter
 
     private PdfPageInfo _page;
     private GState _g = new();
+    // An immutable copy for this stream invocation, never one of the mutable q/Q states.
+    private PatternEntryState _streamEntry = new(new GState());
     private PdfDictionary? _res;
     private int _nOps;
     private long _opCount;
@@ -216,6 +218,7 @@ internal sealed partial class ContentInterpreter
     private void ResetState(PdfMatrix ctm)
     {
         _g = new GState { Ctm = ctm };
+        _streamEntry = new PatternEntryState(_g);
         _saved.Clear();
         _path.Clear();
         _pendingClip = false;
@@ -400,9 +403,7 @@ internal sealed partial class ContentInterpreter
         return SnapshotCore();
     }
 
-    private PdfGraphicsState SnapshotCore() => new(
-        _g.Ctm, _g.Fill, _g.Stroke, _g.LineWidth, _g.LineCap, _g.LineJoin, _g.MiterLimit, _g.Dash, _g.DashPhase, _g.Flatness,
-        _g.Intent, _g.FillAlpha, _g.StrokeAlpha, _g.Blend, _g.SoftMask, _g.Ais, _g.FillOverprint, _g.StrokeOverprint, _g.OverprintMode) { TextKnockout = _g.TextKnockout };
+    private PdfGraphicsState SnapshotCore() => _g.Snapshot();
 
     private void Dispatch(ContentOp op, ContentLexer lx)
     {

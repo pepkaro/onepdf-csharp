@@ -108,6 +108,7 @@ internal sealed partial class ContentInterpreter
         }
 
         PdfDictionary? savedRes = _res;
+        PatternEntryState savedEntry = _streamEntry;
         int savedQBase = _qBase, savedMcBase = _mcBase, savedCompat = _compat, savedSkipped = _skippedSaves;
         bool savedInText = _inText, savedTextClip = _textClipPending, savedPending = _pendingClip, savedEo = _clipEvenOdd;
         bool savedNoColor = _noColor, savedInCharProc = _inCharProc;
@@ -140,6 +141,7 @@ internal sealed partial class ContentInterpreter
             // Patterns chosen inside the procedure are anchored to glyph space, the default space of its content stream
             // (ISO 32000-2 8.7.3.1), not to the page.
             _patternBase = matrix;
+            _streamEntry = new PatternEntryState(_g);
 
             PdfBounds? bbox = font.FontBBox is { Length: 4 } bb && double.IsFinite(bb[0] + bb[1] + bb[2] + bb[3])
                 ? PdfBounds.FromCorners(bb[0], bb[1], bb[2], bb[3]) : null;
@@ -205,6 +207,7 @@ internal sealed partial class ContentInterpreter
                     _tm = savedTm;
                     _tlm = savedTlm;
                     _patternBase = savedPatternBase;
+                    _streamEntry = savedEntry;
                     _path.Clear();
                 }
             }
