@@ -4,6 +4,10 @@ All notable changes are listed here. The format follows [Keep a Changelog](https
 
 ## [Unreleased]
 
+### Added
+
+- `PdfImageAlpha.Interpolate` retains the interpolation flag of the image providing the opacity samples: the soft/explicit mask flag, or the parent flag for embedded and color-key alpha. This lets rendering devices honor independent mask sampling without re-reading image dictionaries.
+
 ## [1.22.0] - 2026-11-10
 
 ### Added
