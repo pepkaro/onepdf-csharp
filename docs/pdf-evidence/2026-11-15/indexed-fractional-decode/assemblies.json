@@ -1,0 +1,11 @@
+{
+  "runtime": ".NET10.0.15",
+  "assemblies": {
+    "OneImage.dll": "984968a1ffea9deabdc4b4ae2d6dad557907b85fbead849520d25a6868cbb78e",
+    "OneImage.Pdf.dll": "e4fa9292d374fb60c463a1deba720f2db07815000aaed1df285ef4cfb6645dd4",
+    "OnePdf.dll": "0479bf57aa6760e57f4ebde5eec9d415bff2b40dd69d103eac5b67cf18618031",
+    "OnePdf.Fonts.dll": "edd4ffc866b1c7766900d323a9e50173c797f9018962c43cc8357974859dc802",
+    "OneImage.Pdf.Tests.dll": "4359f8fb2c82742dd21b3fe89a3de32bd3c7ef3856731fd134380341502effe9"
+  },
+  "sourceBuiltDependency": "Reviewed combined r3; explicit Interpolate API patch elsewhere. Existing image Decode rounding block matches unmodified1.22; ImageLoader overall includes independent mask changes. No new product change."
+}

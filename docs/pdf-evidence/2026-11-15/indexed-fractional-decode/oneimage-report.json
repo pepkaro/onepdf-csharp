@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "status": "pass",
+      "checkedPixels": 73344,
+      "mismatchedPixels": 0,
+      "maxError": 0,
+      "examples": [],
+      "id": "image-positive-no-clipping",
+      "inputSha256": "7bda0eeaddd923c4547bc1ffe8c78d180715b91d76e8ea59c17f6f2a9b1e611b",
+      "outputSha256": "2fa039ab6e2e7cab81973463d70d811bb8640ffd9b8001f5496ad90dfcd922aa"
+    },
+    {
+      "status": "pass",
+      "checkedPixels": 73344,
+      "mismatchedPixels": 0,
+      "maxError": 0,
+      "examples": [],
+      "id": "vector-positive-no-clipping",
+      "inputSha256": "fac1323cbaca39a7aa87239696baae4eec04e8209468bca190008acca18f3cde",
+      "outputSha256": "2fa039ab6e2e7cab81973463d70d811bb8640ffd9b8001f5496ad90dfcd922aa"
+    }
+  ]
+}

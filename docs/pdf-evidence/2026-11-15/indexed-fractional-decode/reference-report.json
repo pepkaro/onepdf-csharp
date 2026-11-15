@@ -1,0 +1,741 @@
+{
+  "schemaVersion": 1,
+  "manifestSha256": "4adf4e945eba6bde8fd47a6b7e0fb36ce2a36aca236c837e72b9e897e9e2cd1b",
+  "runnerSha256": "06092930d160dee5d3c60ebdf0bf1cb5233ce6a016b60aa328d2d8ee079223b8",
+  "helperHashes": {
+    "tools/mit-pdf-corpus/audit_references.py": "de53384f76d5a6767cb5760c6326c58c4f7fb76421a561ba1cfa5612c965ecdf",
+    "tools/mit-pdf-corpus/render-pdfjs.mjs": "60aae99fb11580cc4de15b718549990cb33fae7d3cf8aa0a7137271c92efeecd"
+  },
+  "inputs": 2,
+  "actualRenders": 6,
+  "counts": {
+    "pass": 2,
+    "fail": 4,
+    "error": 0
+  },
+  "results": [
+    {
+      "id": "image-positive-no-clipping",
+      "engine": "mupdf",
+      "inputSha256": "7bda0eeaddd923c4547bc1ffe8c78d180715b91d76e8ea59c17f6f2a9b1e611b",
+      "attempted": true,
+      "rendered": true,
+      "upstreamTestExecution": false,
+      "settings": {
+        "engine": "1.26.11",
+        "wrapper": "1.26.6",
+        "dpi": 72,
+        "annotations": true,
+        "alpha": false,
+        "background": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "mediaBox": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "cropBox": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "rotation": 0
+      },
+      "outputSha256": "4e7e142f0b9d5683c2491e0eeab9059e69fc8a6b6e059597fad466740ef8c62e",
+      "status": "fail",
+      "checkedPixels": 73344,
+      "mismatchedPixels": 34944,
+      "maxError": 201,
+      "examples": [
+        {
+          "x": 42,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 43,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 44,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 45,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 46,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 47,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 48,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 49,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        }
+      ]
+    },
+    {
+      "id": "image-positive-no-clipping",
+      "engine": "pdfium",
+      "inputSha256": "7bda0eeaddd923c4547bc1ffe8c78d180715b91d76e8ea59c17f6f2a9b1e611b",
+      "attempted": true,
+      "rendered": true,
+      "upstreamTestExecution": false,
+      "settings": {
+        "engine": "153.0.7999.0",
+        "wrapper": "5.13.0",
+        "dpi": 72,
+        "annotations": true,
+        "forms": "static appearances",
+        "xfa": false,
+        "background": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "mediaBox": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "cropBox": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "rotation": 0
+      },
+      "outputSha256": "35f6ef2b9c94f70145a56facb3fe158fd9a3a0b3a5af646787b4274906ff36e8",
+      "status": "fail",
+      "checkedPixels": 73344,
+      "mismatchedPixels": 34944,
+      "maxError": 201,
+      "examples": [
+        {
+          "x": 42,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 43,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 44,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 45,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 46,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 47,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 48,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 49,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        }
+      ]
+    },
+    {
+      "id": "image-positive-no-clipping",
+      "engine": "pdfjs",
+      "inputSha256": "7bda0eeaddd923c4547bc1ffe8c78d180715b91d76e8ea59c17f6f2a9b1e611b",
+      "attempted": true,
+      "rendered": true,
+      "upstreamTestExecution": false,
+      "settings": {
+        "pdfjs": "6.5.438",
+        "build": "0a4153349",
+        "backend": "@napi-rs/canvas (Node Canvas; NOT browser Canvas)",
+        "canvasVersion": "1.1.1",
+        "node": "v24.22.1",
+        "width": 320,
+        "height": 240,
+        "dpi": 72,
+        "annotations": "ENABLE static appearances",
+        "background": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "useSystemFonts": false,
+        "isEvalSupported": false,
+        "xfa": false,
+        "useWorkerFetch": false,
+        "icc": false,
+        "iccReason": "PDF.js Node worker-fetch gate disables ICC WASM; ICC-based inputs would fall back",
+        "deviceCmyk": "Polynomial fallback, not ICC-managed CMYK",
+        "diagnostics": [],
+        "mediaBox": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "cropBox": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "rotation": 0
+      },
+      "outputSha256": "a3e4ba7a8c3316bddb8b2caf9691fa23e8dbf5ea0321f8b4841789b8a880bc1c",
+      "status": "fail",
+      "checkedPixels": 73344,
+      "mismatchedPixels": 34944,
+      "maxError": 201,
+      "examples": [
+        {
+          "x": 42,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 43,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 44,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 45,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 46,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 47,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 48,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 49,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vector-positive-no-clipping",
+      "engine": "mupdf",
+      "inputSha256": "fac1323cbaca39a7aa87239696baae4eec04e8209468bca190008acca18f3cde",
+      "attempted": true,
+      "rendered": true,
+      "upstreamTestExecution": false,
+      "settings": {
+        "engine": "1.26.11",
+        "wrapper": "1.26.6",
+        "dpi": 72,
+        "annotations": true,
+        "alpha": false,
+        "background": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "mediaBox": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "cropBox": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "rotation": 0
+      },
+      "outputSha256": "fedef771f5f532b8d9464f8de8069dd55384afc0c4744a0c5cb49d25d657ca5d",
+      "status": "pass",
+      "checkedPixels": 73344,
+      "mismatchedPixels": 0,
+      "maxError": 0,
+      "examples": []
+    },
+    {
+      "id": "vector-positive-no-clipping",
+      "engine": "pdfium",
+      "inputSha256": "fac1323cbaca39a7aa87239696baae4eec04e8209468bca190008acca18f3cde",
+      "attempted": true,
+      "rendered": true,
+      "upstreamTestExecution": false,
+      "settings": {
+        "engine": "153.0.7999.0",
+        "wrapper": "5.13.0",
+        "dpi": 72,
+        "annotations": true,
+        "forms": "static appearances",
+        "xfa": false,
+        "background": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "mediaBox": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "cropBox": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "rotation": 0
+      },
+      "outputSha256": "35f6ef2b9c94f70145a56facb3fe158fd9a3a0b3a5af646787b4274906ff36e8",
+      "status": "fail",
+      "checkedPixels": 73344,
+      "mismatchedPixels": 34944,
+      "maxError": 201,
+      "examples": [
+        {
+          "x": 42,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 43,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 44,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 45,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 46,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 47,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 48,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        },
+        {
+          "x": 49,
+          "y": 42,
+          "actual": [
+            230,
+            45,
+            80
+          ],
+          "expected": [
+            58,
+            200,
+            123
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vector-positive-no-clipping",
+      "engine": "pdfjs",
+      "inputSha256": "fac1323cbaca39a7aa87239696baae4eec04e8209468bca190008acca18f3cde",
+      "attempted": true,
+      "rendered": true,
+      "upstreamTestExecution": false,
+      "settings": {
+        "pdfjs": "6.5.438",
+        "build": "0a4153349",
+        "backend": "@napi-rs/canvas (Node Canvas; NOT browser Canvas)",
+        "canvasVersion": "1.1.1",
+        "node": "v24.22.1",
+        "width": 320,
+        "height": 240,
+        "dpi": 72,
+        "annotations": "ENABLE static appearances",
+        "background": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "useSystemFonts": false,
+        "isEvalSupported": false,
+        "xfa": false,
+        "useWorkerFetch": false,
+        "icc": false,
+        "iccReason": "PDF.js Node worker-fetch gate disables ICC WASM; ICC-based inputs would fall back",
+        "deviceCmyk": "Polynomial fallback, not ICC-managed CMYK",
+        "diagnostics": [],
+        "mediaBox": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "cropBox": [
+          0,
+          0,
+          320,
+          240
+        ],
+        "rotation": 0
+      },
+      "outputSha256": "13ad95d22b0301d7ccf1c4ba41184eb7929fc13727eca6f2e0d2194362b86509",
+      "status": "pass",
+      "checkedPixels": 73344,
+      "mismatchedPixels": 0,
+      "maxError": 0,
+      "examples": []
+    }
+  ],
+  "capabilityLimits": [
+    "PDF.js uses Node Canvas, not native browser Canvas.",
+    "No ICC paths or system fonts used.",
+    "Reference agreement is supporting evidence; fixed analytic geometry is the oracle."
+  ]
+}

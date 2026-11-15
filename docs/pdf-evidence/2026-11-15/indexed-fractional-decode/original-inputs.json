@@ -1,0 +1,188 @@
+{
+  "status": "uncredited no-clipping controls with fixed spec expectations",
+  "sourceHashes": {},
+  "fixtures": [
+    {
+      "id": "image-positive-no-clipping",
+      "file": "pdf/image-positive-no-clipping.pdf",
+      "sha256": "7bda0eeaddd923c4547bc1ffe8c78d180715b91d76e8ea59c17f6f2a9b1e611b",
+      "bytes": 808,
+      "expectedRegions": [
+        {
+          "rect": [
+            42,
+            42,
+            56,
+            156
+          ],
+          "rgb": [
+            58,
+            200,
+            123
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            102,
+            42,
+            56,
+            156
+          ],
+          "rgb": [
+            46,
+            97,
+            223
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            162,
+            42,
+            56,
+            156
+          ],
+          "rgb": [
+            231,
+            190,
+            40
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            222,
+            42,
+            56,
+            156
+          ],
+          "rgb": [
+            30,
+            210,
+            220
+          ],
+          "tolerance": 1
+        }
+      ],
+      "imageRect": [
+        40,
+        40,
+        240,
+        160
+      ],
+      "backgroundRgb": [
+        51,
+        102,
+        153
+      ],
+      "renderWidth": 320,
+      "renderHeight": 240,
+      "mediaBox": [
+        0,
+        0,
+        320,
+        240
+      ],
+      "cropBox": [
+        0,
+        0,
+        320,
+        240
+      ],
+      "rotation": 0,
+      "derivation": "0.6,1.6,2.6,3.6 are positive and all within0..hival4; nearest integers1,2,3,4. No clipping, negative numbers or exact-half ties."
+    },
+    {
+      "id": "vector-positive-no-clipping",
+      "file": "pdf/vector-positive-no-clipping.pdf",
+      "sha256": "fac1323cbaca39a7aa87239696baae4eec04e8209468bca190008acca18f3cde",
+      "bytes": 701,
+      "expectedRegions": [
+        {
+          "rect": [
+            42,
+            42,
+            56,
+            156
+          ],
+          "rgb": [
+            58,
+            200,
+            123
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            102,
+            42,
+            56,
+            156
+          ],
+          "rgb": [
+            46,
+            97,
+            223
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            162,
+            42,
+            56,
+            156
+          ],
+          "rgb": [
+            231,
+            190,
+            40
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            222,
+            42,
+            56,
+            156
+          ],
+          "rgb": [
+            30,
+            210,
+            220
+          ],
+          "tolerance": 1
+        }
+      ],
+      "imageRect": [
+        40,
+        40,
+        240,
+        160
+      ],
+      "backgroundRgb": [
+        51,
+        102,
+        153
+      ],
+      "renderWidth": 320,
+      "renderHeight": 240,
+      "mediaBox": [
+        0,
+        0,
+        320,
+        240
+      ],
+      "cropBox": [
+        0,
+        0,
+        320,
+        240
+      ],
+      "rotation": 0,
+      "derivation": "0.6,1.6,2.6,3.6 are positive and all within0..hival4; nearest integers1,2,3,4. No clipping, negative numbers or exact-half ties."
+    }
+  ]
+}
