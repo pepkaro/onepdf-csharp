@@ -261,21 +261,11 @@ internal sealed class CompositeFont : PdfFont
         }
         else if (enc is PdfStream s)
         {
-            byte[]? bytes = FontSupport.ReadStream(ctx, s, FontSupport.MaxCMapBytes, "embedded CMap");
-            if (bytes is not null)
+            try
             {
-                try
+                CMap? m = FontSupport.LoadCMap(ctx, s, "embedded CMap");
+                if (m is not null)
                 {
-                    CMap m = CMapParser.Parse(bytes);
-                    if (m.UseCMap is null)
-                    {
-                        string? parent = s.Dictionary.GetName("UseCMap");
-                        if (parent is not null)
-                        {
-                            m.UseCMap = PredefinedCMaps.TryGet(parent);
-                        }
-                    }
-
                     long wm = s.Dictionary.GetInt("WMode", -1);
                     if (wm is 0 or 1)
                     {
@@ -284,10 +274,10 @@ internal sealed class CompositeFont : PdfFont
 
                     return m;
                 }
-                catch (FontProgramException ex)
-                {
-                    ctx.Warn($"The embedded CMap could not be parsed ({ex.Message}); Identity-H is assumed.");
-                }
+            }
+            catch (FontProgramException ex)
+            {
+                ctx.Warn($"The embedded CMap could not be parsed ({ex.Message}); Identity-H is assumed.");
             }
         }
         else

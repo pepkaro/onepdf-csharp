@@ -43,7 +43,7 @@ internal readonly record struct BfRange(uint Lo, uint Hi, string Base, string[]?
 /// </remarks>
 internal sealed class CMap
 {
-    private const int MaxParentDepth = 16;
+    internal const int MaxParentDepth = 16;
 
     private readonly CodespaceRange[] _codespace;
     private readonly CidRange[][] _cid; // index = code length - 1
