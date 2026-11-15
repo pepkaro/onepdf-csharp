@@ -1,0 +1,146 @@
+[
+  {
+    "renderer": "mupdf",
+    "case": "entry-inherited",
+    "checked": 8960,
+    "mismatched": 0,
+    "max_channel_error": 1,
+    "passed": true
+  },
+  {
+    "renderer": "mupdf",
+    "case": "entry-explicit",
+    "checked": 8960,
+    "mismatched": 0,
+    "max_channel_error": 1,
+    "passed": true
+  },
+  {
+    "renderer": "mupdf",
+    "case": "ordinary-form",
+    "checked": 8960,
+    "mismatched": 0,
+    "max_channel_error": 1,
+    "passed": true
+  },
+  {
+    "renderer": "mupdf",
+    "case": "entry-a-b-a",
+    "checked": 6240,
+    "mismatched": 0,
+    "max_channel_error": 1,
+    "passed": true
+  },
+  {
+    "renderer": "mupdf",
+    "case": "nested-form",
+    "checked": 11200,
+    "mismatched": 0,
+    "max_channel_error": 1,
+    "passed": true
+  },
+  {
+    "renderer": "mupdf",
+    "case": "nested-pattern",
+    "checked": 8960,
+    "mismatched": 2528,
+    "max_channel_error": 128,
+    "passed": false
+  },
+  {
+    "renderer": "pdfium",
+    "case": "entry-inherited",
+    "checked": 8960,
+    "mismatched": 1120,
+    "max_channel_error": 128,
+    "passed": false
+  },
+  {
+    "renderer": "pdfium",
+    "case": "entry-explicit",
+    "checked": 8960,
+    "mismatched": 0,
+    "max_channel_error": 0,
+    "passed": true
+  },
+  {
+    "renderer": "pdfium",
+    "case": "ordinary-form",
+    "checked": 8960,
+    "mismatched": 0,
+    "max_channel_error": 0,
+    "passed": true
+  },
+  {
+    "renderer": "pdfium",
+    "case": "entry-a-b-a",
+    "checked": 6240,
+    "mismatched": 1200,
+    "max_channel_error": 128,
+    "passed": false
+  },
+  {
+    "renderer": "pdfium",
+    "case": "nested-form",
+    "checked": 11200,
+    "mismatched": 3360,
+    "max_channel_error": 128,
+    "passed": false
+  },
+  {
+    "renderer": "pdfium",
+    "case": "nested-pattern",
+    "checked": 8960,
+    "mismatched": 1120,
+    "max_channel_error": 128,
+    "passed": false
+  },
+  {
+    "renderer": "pdfjs",
+    "case": "entry-inherited",
+    "checked": 8960,
+    "mismatched": 1120,
+    "max_channel_error": 128,
+    "passed": false
+  },
+  {
+    "renderer": "pdfjs",
+    "case": "entry-explicit",
+    "checked": 8960,
+    "mismatched": 0,
+    "max_channel_error": 1,
+    "passed": true
+  },
+  {
+    "renderer": "pdfjs",
+    "case": "ordinary-form",
+    "checked": 8960,
+    "mismatched": 0,
+    "max_channel_error": 1,
+    "passed": true
+  },
+  {
+    "renderer": "pdfjs",
+    "case": "entry-a-b-a",
+    "checked": 6240,
+    "mismatched": 1200,
+    "max_channel_error": 128,
+    "passed": false
+  },
+  {
+    "renderer": "pdfjs",
+    "case": "nested-form",
+    "checked": 11200,
+    "mismatched": 3360,
+    "max_channel_error": 128,
+    "passed": false
+  },
+  {
+    "renderer": "pdfjs",
+    "case": "nested-pattern",
+    "checked": 8960,
+    "mismatched": 1120,
+    "max_channel_error": 128,
+    "passed": false
+  }
+]

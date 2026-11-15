@@ -1,0 +1,392 @@
+{
+  "dpi": 72,
+  "page": 0,
+  "width": 320,
+  "height": 240,
+  "background": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "fixtures": [
+    {
+      "name": "entry-inherited",
+      "input": "entry-inherited.pdf",
+      "sha256": "c7d072e81d4645718bf713a4f5fd629a2a235d9446565ff1be1a1934ab9d916a",
+      "regions": [
+        {
+          "rect": [
+            20,
+            116,
+            280,
+            8
+          ],
+          "rgb": [
+            179,
+            51,
+            102
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            20,
+            96,
+            280,
+            12
+          ],
+          "rgb": [
+            51,
+            102,
+            153
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            20,
+            132,
+            280,
+            12
+          ],
+          "rgb": [
+            51,
+            102,
+            153
+          ],
+          "tolerance": 1
+        }
+      ]
+    },
+    {
+      "name": "entry-explicit",
+      "input": "entry-explicit.pdf",
+      "sha256": "65acba4e681c5998f247d5bf78aed36c4ac4b35372ac53e7d725a27931bc824c",
+      "regions": [
+        {
+          "rect": [
+            20,
+            116,
+            280,
+            8
+          ],
+          "rgb": [
+            179,
+            51,
+            102
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            20,
+            96,
+            280,
+            12
+          ],
+          "rgb": [
+            51,
+            102,
+            153
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            20,
+            132,
+            280,
+            12
+          ],
+          "rgb": [
+            51,
+            102,
+            153
+          ],
+          "tolerance": 1
+        }
+      ]
+    },
+    {
+      "name": "ordinary-form",
+      "input": "ordinary-form.pdf",
+      "sha256": "c17709e35a892b1ce5f01dd09022171dfddb7514139d350677610269524f4f3d",
+      "regions": [
+        {
+          "rect": [
+            20,
+            116,
+            280,
+            8
+          ],
+          "rgb": [
+            179,
+            51,
+            102
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            20,
+            96,
+            280,
+            12
+          ],
+          "rgb": [
+            51,
+            102,
+            153
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            20,
+            132,
+            280,
+            12
+          ],
+          "rgb": [
+            51,
+            102,
+            153
+          ],
+          "tolerance": 1
+        }
+      ]
+    },
+    {
+      "name": "entry-a-b-a",
+      "input": "entry-a-b-a.pdf",
+      "sha256": "df8072235bb9dedc13a4fbd5ecd592fc4a80b7792c6b803351c7fba31a7a3060",
+      "regions": [
+        {
+          "rect": [
+            20,
+            116,
+            60,
+            8
+          ],
+          "rgb": [
+            179,
+            51,
+            102
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            20,
+            96,
+            60,
+            12
+          ],
+          "rgb": [
+            51,
+            102,
+            153
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            20,
+            132,
+            60,
+            12
+          ],
+          "rgb": [
+            51,
+            102,
+            153
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            130,
+            112,
+            60,
+            16
+          ],
+          "rgb": [
+            179,
+            51,
+            102
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            130,
+            96,
+            60,
+            12
+          ],
+          "rgb": [
+            51,
+            102,
+            153
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            130,
+            132,
+            60,
+            12
+          ],
+          "rgb": [
+            51,
+            102,
+            153
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            240,
+            116,
+            60,
+            8
+          ],
+          "rgb": [
+            179,
+            51,
+            102
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            240,
+            96,
+            60,
+            12
+          ],
+          "rgb": [
+            51,
+            102,
+            153
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            240,
+            132,
+            60,
+            12
+          ],
+          "rgb": [
+            51,
+            102,
+            153
+          ],
+          "tolerance": 1
+        }
+      ]
+    },
+    {
+      "name": "nested-form",
+      "input": "nested-form.pdf",
+      "sha256": "13cc51564c04b2feba046575efd08b997dddd4195370e32563c737e94c545cb3",
+      "regions": [
+        {
+          "rect": [
+            20,
+            112,
+            280,
+            16
+          ],
+          "rgb": [
+            179,
+            51,
+            102
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            20,
+            96,
+            280,
+            12
+          ],
+          "rgb": [
+            51,
+            102,
+            153
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            20,
+            132,
+            280,
+            12
+          ],
+          "rgb": [
+            51,
+            102,
+            153
+          ],
+          "tolerance": 1
+        }
+      ]
+    },
+    {
+      "name": "nested-pattern",
+      "input": "nested-pattern.pdf",
+      "sha256": "47f0d9604d29d799fdc45d7bb1c1a50926743919e0a02dffa547b2da034afe46",
+      "regions": [
+        {
+          "rect": [
+            20,
+            116,
+            280,
+            8
+          ],
+          "rgb": [
+            179,
+            51,
+            102
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            20,
+            96,
+            280,
+            12
+          ],
+          "rgb": [
+            51,
+            102,
+            153
+          ],
+          "tolerance": 1
+        },
+        {
+          "rect": [
+            20,
+            132,
+            280,
+            12
+          ],
+          "rgb": [
+            51,
+            102,
+            153
+          ],
+          "tolerance": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "path": "src/OnePdf/Content/ContentInterpreter.Forms.cs",
+    "bytes": 26340,
+    "sha256": "747a626c53973364883b46f137d27ffd4d94ffbeb485b1da18d34cff8722fff8"
+  },
+  {
+    "path": "src/OnePdf/Content/ContentInterpreter.Patterns.cs",
+    "bytes": 7280,
+    "sha256": "8fb3a539dbd875531d5ea4503b32de93f5406ed9008f4958256cefa8a48c5ef7"
+  },
+  {
+    "path": "src/OnePdf/Content/ContentInterpreter.Type3.cs",
+    "bytes": 11560,
+    "sha256": "64899ecd011a4cbbbbd165f29107490cc1dba39a4a6cfa1a1aca09cf5c6bf1a0"
+  },
+  {
+    "path": "src/OnePdf/Content/ContentInterpreter.cs",
+    "bytes": 35108,
+    "sha256": "2f09fd868151489d534d2c8b9a92919df103c4e3add19db17a94452db319fa03"
+  },
+  {
+    "path": "src/OnePdf/Content/GState.cs",
+    "bytes": 3403,
+    "sha256": "b72c9e2f9fa3258304baf48562544d33b76aa90926646dd8d3ea1c58cb31fc02"
+  },
+  {
+    "path": "src/OnePdf/Content/PatternEntryState.cs",
+    "bytes": 3289,
+    "sha256": "de049062aa6fc7ea0e8ef74069f3a24dd334cf66f2b5797557ef7f3735066e65"
+  },
+  {
+    "path": "src/OnePdf/Rendering/PdfPatterns.cs",
+    "bytes": 4934,
+    "sha256": "dd73d8d1432c674566f82bb2cf4447b6d0c63db9971b34c44bf3f890061c0545"
+  },
+  {
+    "path": "tests/OnePdf.Tests/Shading/PatternEntryStateTests.cs",
+    "bytes": 20585,
+    "sha256": "6fad05fcb89636c93866557748ca81ca606b9fd07724032ec83e4d1edd3c7a73"
+  }
+]

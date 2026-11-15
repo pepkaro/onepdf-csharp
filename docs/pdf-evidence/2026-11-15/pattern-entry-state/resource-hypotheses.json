@@ -1,0 +1,32 @@
+[
+  {
+    "name": "omitted-resources",
+    "sha256": "16f6244d601b59c0cc030d5a36252e56477ed5ebfbda261c8c4bf3a903f9aac0",
+    "hypotheses": {
+      "invocation_entry_width": 3,
+      "page_resource_owner_width": 1,
+      "current_width": 9
+    },
+    "resolved_expectation": null
+  },
+  {
+    "name": "shared-resources",
+    "sha256": "74032af5151a27086731df192b495e70e8269e5123382d00fcb9cac71656b968",
+    "hypotheses": {
+      "invocation_entry_width": 3,
+      "page_resource_owner_width": 1,
+      "current_width": 9
+    },
+    "resolved_expectation": null
+  },
+  {
+    "name": "explicit-resources",
+    "sha256": "06809f1c88cb333ef69964f9cabce0b61bfcaab0e9caab0e734d98daf6b7f448",
+    "hypotheses": {
+      "invocation_entry_width": 3,
+      "page_resource_owner_width": 1,
+      "current_width": 9
+    },
+    "resolved_expectation": null
+  }
+]

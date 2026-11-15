@@ -1,0 +1,50 @@
+[
+  {
+    "renderer": "after-lazy",
+    "case": "entry-inherited",
+    "checked": 8960,
+    "mismatched": 0,
+    "max_channel_error": 0,
+    "passed": true
+  },
+  {
+    "renderer": "after-lazy",
+    "case": "entry-explicit",
+    "checked": 8960,
+    "mismatched": 0,
+    "max_channel_error": 0,
+    "passed": true
+  },
+  {
+    "renderer": "after-lazy",
+    "case": "ordinary-form",
+    "checked": 8960,
+    "mismatched": 0,
+    "max_channel_error": 0,
+    "passed": true
+  },
+  {
+    "renderer": "after-lazy",
+    "case": "entry-a-b-a",
+    "checked": 6240,
+    "mismatched": 0,
+    "max_channel_error": 0,
+    "passed": true
+  },
+  {
+    "renderer": "after-lazy",
+    "case": "nested-form",
+    "checked": 11200,
+    "mismatched": 0,
+    "max_channel_error": 0,
+    "passed": true
+  },
+  {
+    "renderer": "after-lazy",
+    "case": "nested-pattern",
+    "checked": 8960,
+    "mismatched": 0,
+    "max_channel_error": 0,
+    "passed": true
+  }
+]

@@ -1,0 +1,125 @@
+[
+  {
+    "image": "explicit-resources-mupdf.png",
+    "sample_x": 100,
+    "painted_rows": [
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125
+    ],
+    "painted_height": 12
+  },
+  {
+    "image": "explicit-resources-pdfium.png",
+    "sample_x": 100,
+    "painted_rows": [
+      118,
+      119,
+      120,
+      121
+    ],
+    "painted_height": 4
+  },
+  {
+    "image": "explicit-resources-pdfjs.png",
+    "sample_x": 100,
+    "painted_rows": [
+      118,
+      119,
+      120,
+      121
+    ],
+    "painted_height": 4
+  },
+  {
+    "image": "omitted-resources-mupdf.png",
+    "sample_x": 100,
+    "painted_rows": [
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125
+    ],
+    "painted_height": 12
+  },
+  {
+    "image": "omitted-resources-pdfium.png",
+    "sample_x": 100,
+    "painted_rows": [
+      118,
+      119,
+      120,
+      121
+    ],
+    "painted_height": 4
+  },
+  {
+    "image": "omitted-resources-pdfjs.png",
+    "sample_x": 100,
+    "painted_rows": [
+      118,
+      119,
+      120,
+      121
+    ],
+    "painted_height": 4
+  },
+  {
+    "image": "shared-resources-mupdf.png",
+    "sample_x": 100,
+    "painted_rows": [
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125
+    ],
+    "painted_height": 12
+  },
+  {
+    "image": "shared-resources-pdfium.png",
+    "sample_x": 100,
+    "painted_rows": [
+      118,
+      119,
+      120,
+      121
+    ],
+    "painted_height": 4
+  },
+  {
+    "image": "shared-resources-pdfjs.png",
+    "sample_x": 100,
+    "painted_rows": [
+      118,
+      119,
+      120,
+      121
+    ],
+    "painted_height": 4
+  }
+]
