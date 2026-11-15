@@ -206,11 +206,12 @@ public sealed record PdfImageOptions
 /// </summary>
 public sealed class PdfImageAlpha
 {
-    internal PdfImageAlpha(int width, int height, byte[] values)
+    internal PdfImageAlpha(int width, int height, byte[] values, bool interpolate)
     {
         Width = width;
         Height = height;
         Values = values;
+        Interpolate = interpolate;
     }
 
     /// <summary>Pixels per row.</summary>
@@ -218,6 +219,9 @@ public sealed class PdfImageAlpha
 
     /// <summary>Rows, top to bottom.</summary>
     public int Height { get; }
+
+    /// <summary>Interpolation requested by the image supplying this plane. For a soft or explicit mask this is the mask image's flag, not the parent image's. For embedded or colour-key alpha this is the parent image's flag.</summary>
+    public bool Interpolate { get; }
 
     /// <summary>Row-major values, <c>Width × Height</c> bytes. Do not modify.</summary>
     public ReadOnlyMemory<byte> Values { get; }

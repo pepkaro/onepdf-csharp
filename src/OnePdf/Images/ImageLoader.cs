@@ -438,7 +438,7 @@ internal static class ImageLoader
 
         if (mask)
         {
-            img.Alpha = Stencil(raw, decode);
+            img.Alpha = Stencil(raw, decode, img.Interpolate);
             img.IsDecoded = true;
             return img;
         }
@@ -466,7 +466,7 @@ internal static class ImageLoader
         }
         else if (chanAlpha is not null)
         {
-            img.Alpha = new PdfImageAlpha(raw.Width, raw.Height, chanAlpha);
+            img.Alpha = new PdfImageAlpha(raw.Width, raw.Height, chanAlpha, img.Interpolate);
             if (sem.SMaskInData == 2)
             {
                 UnPremultiply(samples, chanAlpha, space.FinalComponentCount);
@@ -550,7 +550,7 @@ internal static class ImageLoader
 
             double[]? mt = Numbers(sm.Dictionary.Get("Matte"));
             matte = mt;
-            return new PdfImageAlpha(m.Width, m.Height, values);
+            return new PdfImageAlpha(m.Width, m.Height, values, m.Interpolate);
         }
 
         if (maskObj is PdfStream ms)
@@ -571,7 +571,7 @@ internal static class ImageLoader
     /// <summary>
     /// Stencil coverage (8.9.6.2): with the default /Decode [0 1] a 0 sample is painted; [1 0] paints the 1 samples.
     /// </summary>
-    private static PdfImageAlpha Stencil(Raw r, double[]? decode)
+    private static PdfImageAlpha Stencil(Raw r, double[]? decode, bool interpolate)
     {
         bool paintOne = decode is { Length: >= 2 } && decode[0] > decode[1];
         int maxv = (1 << Math.Min(r.Bpc, 16)) - 1;
@@ -596,7 +596,7 @@ internal static class ImageLoader
             }
         }
 
-        return new PdfImageAlpha(r.Width, r.Height, alpha);
+        return new PdfImageAlpha(r.Width, r.Height, alpha, interpolate);
     }
 
     private static ReadOnlySpan<byte> Row(ReadOnlySpan<byte> data, int y, long stride)
